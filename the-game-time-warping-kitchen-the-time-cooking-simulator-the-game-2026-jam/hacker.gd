@@ -11,6 +11,6 @@ func _ready():
 func _process(_delta: float) -> void:
 	send_hello_world_to_server.rpc()
 
-@rpc
+@rpc("any_peer")
 func send_hello_world_to_server():
 	pass

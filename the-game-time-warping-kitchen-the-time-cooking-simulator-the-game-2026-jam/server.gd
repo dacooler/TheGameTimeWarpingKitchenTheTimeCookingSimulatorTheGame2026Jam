@@ -8,6 +8,6 @@ func _ready():
 	peer.create_server(PORT, MAX_CLIENTS)
 	multiplayer.multiplayer_peer = peer
 
-@rpc
+@rpc("any_peer")
 func send_hello_world_to_server():
 	print("hello world")
