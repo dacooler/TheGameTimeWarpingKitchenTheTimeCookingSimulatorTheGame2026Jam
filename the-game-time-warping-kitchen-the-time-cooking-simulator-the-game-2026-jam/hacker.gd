@@ -1,6 +1,6 @@
 extends Node2D
 
-const IP_ADDRESS = "127.0.0.1"
+const IP_ADDRESS = "10.57.159.210"
 const PORT = 6767
 
 func _ready():
