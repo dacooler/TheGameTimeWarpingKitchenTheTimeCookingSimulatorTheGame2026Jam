@@ -9,5 +9,5 @@ func _ready():
 	multiplayer.multiplayer_peer = peer
 
 @rpc("any_peer")
-func send_hello_world_to_server():
-	print("hello world")
+func send_hello_world_to_server(hello: String):
+	print(hello)

@@ -9,8 +9,8 @@ func _ready():
 	multiplayer.multiplayer_peer = peer
 
 func _process(_delta: float) -> void:
-	send_hello_world_to_server.rpc()
+	send_hello_world_to_server.rpc("hello i am calling")
 
 @rpc("any_peer")
-func send_hello_world_to_server():
+func send_hello_world_to_server(hello: String):
 	pass
