@@ -22,7 +22,7 @@ position = Vector2(0.4999962, -3.8146973e-06)
 shape = SubResource("CircleShape2D_6vm1l")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1648922716]
-position = Vector2(-0.5000038, 0.99999666)
-scale = Vector2(74.99999, 71.99999)
+position = Vector2(2, 3.3999977)
+scale = Vector2(257.99997, 247.68)
 mesh = SubResource("QuadMesh_ec42o")
 texture = ExtResource("2_2scbw")

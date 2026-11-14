@@ -9,11 +9,11 @@ enum Produce {
 	ASH,
 }
 const ASH = preload("uid://ccc0nxw0hf6hc")
-const TOMATO = preload("uid://byqa1rf148246")
 const ONION_CHOPPED = preload("uid://ddsxfbum3h6lg")
-const ONION = preload("uid://bojgpg1f26ws8")
 const SAUCE = preload("uid://cybkytvgiuri7")
 const TOMATO_COOKED = preload("uid://di6c6fitmaqp6")
+const TOMATO = preload("uid://cbfllugif8qoa")
+const ONION = preload("uid://svou3n3450pm")
 
 static var produceImages = {
 	Produce.ASH : ASH,
