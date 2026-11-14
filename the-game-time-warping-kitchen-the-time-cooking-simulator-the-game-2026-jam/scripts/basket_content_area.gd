@@ -8,5 +8,4 @@ func _ready():
 func _on_body_entered(body):
 	if !body.is_in_basket:
 		body.is_in_basket = true
-		print("adding the onion")
 		basket.add_produce_2(body)

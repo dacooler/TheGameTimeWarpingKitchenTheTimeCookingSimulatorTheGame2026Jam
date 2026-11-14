@@ -33,10 +33,12 @@ stream_2/stream = ExtResource("7_pvidj")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m1b0l"]
 size = Vector2(1.0114444, 0.3917923)
 
-[node name="Node2D" type="Node2D" unique_id=1352010802]
+[node name="Node2D2" type="Node2D" unique_id=1352010802]
 script = ExtResource("1_xhhnb")
 
 [node name="CuttingBoardExitArea" type="Area2D" parent="." unique_id=1508558130]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("2_5ownp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CuttingBoardExitArea" unique_id=1137769281]
@@ -44,6 +46,8 @@ position = Vector2(591, 598)
 shape = SubResource("RectangleShape2D_ii7jg")
 
 [node name="CuttingBoardEnterArea" type="Area2D" parent="." unique_id=79635887]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("2_nryjd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CuttingBoardEnterArea" unique_id=838612427]

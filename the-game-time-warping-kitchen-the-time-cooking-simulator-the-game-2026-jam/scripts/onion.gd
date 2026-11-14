@@ -2,11 +2,12 @@ extends RigidBody2D
 
 var is_draged := false
 var is_in_basket := true
-var is_in_choppingBoard := false
+var is_in_chopping_board := false
 var type: Globals.Produce
+var is_in_frypan := false
+var is_dead := false
 
 @onready var mesh_instance_2d: MeshInstance2D = $MeshInstance2D
-
 
 func set_type(produce: Globals.Produce):
 	type = produce
@@ -27,7 +28,6 @@ func _input(event):
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if !event.pressed:
 				_unpressed()
-				print("Mouse released!")
 
 func _pressed():
 	is_draged = true

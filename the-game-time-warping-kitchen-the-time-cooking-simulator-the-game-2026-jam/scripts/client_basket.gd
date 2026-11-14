@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 const ONION = preload("uid://7xo8mbumihps")
 
@@ -40,7 +40,6 @@ func request_get_content():
 
 @rpc("any_peer")
 func get_content(incomming_produces: Dictionary[Globals.Produce, int]):
-	print(incomming_produces)
 	for produce in incomming_produces:
 		var diff = incomming_produces[produce] - produce_in_basket[produce].size()
 		if diff > 0:
@@ -52,6 +51,7 @@ func _create_produce(produce: Globals.Produce, amount: int):
 	for _i in range(amount):
 		var onion := ONION.instantiate()
 		onion.set_type(produce)
+		onion.position = position
 		add_sibling(onion)
 		produce_in_basket[produce].append(onion)
 
@@ -61,4 +61,5 @@ func _remove_produce(produce: Globals.Produce, amount: int):
 			break
 
 		var to_remove: Node2D = produce_in_basket[produce].pop_back()
+		to_remove.is_dead = true
 		to_remove.queue_free()

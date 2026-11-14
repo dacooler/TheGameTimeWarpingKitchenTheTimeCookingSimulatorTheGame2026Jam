@@ -3,6 +3,10 @@ extends Node
 var produces: Dictionary[Globals.Produce, int] = {
 	Globals.Produce.ONION: 0,
 	Globals.Produce.TOMATO: 0,
+	Globals.Produce.CHOPPED_ONION: 0,
+	Globals.Produce.CHOPPED_TOMATO: 0,
+	Globals.Produce.SAUCE: 0,
+	Globals.Produce.ASH: 0,
 }
 
 func _ready():
@@ -15,7 +19,6 @@ var time: float = 0
 func _process(delta: float) -> void:
 	time += delta
 	if delta > 1:
-		print(produces)
 		delta = 0
 
 @rpc("any_peer")

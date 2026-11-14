@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://ydgvbhqad44u" path="res://scenes/steaka.gd" id="1_o5rkf"]
 [ext_resource type="Texture2D" uid="uid://b1waqfj3lmwvr" path="res://images/fryingpan.jpg" id="2_5pugn"]
 [ext_resource type="PackedScene" uid="uid://dgugmtsxvgb82" path="res://scenes/prefabs/basket.tscn" id="3_e2was"]
+[ext_resource type="Script" uid="uid://qs65sjyb3w1" path="res://scripts/frypan_enter_area.gd" id="4_vf612"]
+[ext_resource type="Script" uid="uid://cfq6aj7fqxbx5" path="res://scripts/frypan_leave_area.gd" id="5_lbb8j"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_o5rkf"]
 
@@ -11,7 +13,7 @@ size = Vector2(541, 85)
 
 [node name="Node2D" type="Node2D" unique_id=82442031]
 script = ExtResource("1_o5rkf")
-cookingSpeed = 1.0
+cookingSpeed = 30.0
 
 [node name="Basket" parent="." unique_id=626660133 instance=ExtResource("3_e2was")]
 position = Vector2(102, 506)
@@ -28,8 +30,20 @@ texture = ExtResource("2_5pugn")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FryingPan" unique_id=2143143460]
 polygon = PackedVector2Array(309, 365, 374, 433, 792, 436, 857, 372, 796, 454, 366, 450)
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1812641994]
+[node name="EnterArea" type="Area2D" parent="." unique_id=1812641994]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("4_vf612")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1462211614]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnterArea" unique_id=1462211614]
+position = Vector2(583.5, 406.5)
+shape = SubResource("RectangleShape2D_ii7jg")
+
+[node name="LeaveArea" type="Area2D" parent="." unique_id=571603021]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("5_lbb8j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeaveArea" unique_id=1828790211]
 position = Vector2(583.5, 406.5)
 shape = SubResource("RectangleShape2D_ii7jg")

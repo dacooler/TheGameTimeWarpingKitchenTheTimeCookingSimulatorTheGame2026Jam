@@ -29,7 +29,7 @@ var selected_action = ""
 func start_cutting(body: Node2D):
 	chopping.append(body)
 	_new_thing()
-	
+
 func stop_cutting(body: Node2D):
 	chopping.erase(body)
 	typed = ""
@@ -54,7 +54,6 @@ func _show_progress():
 func _new_thing():
 	typed = ""
 	selected_action = actions.pick_random()
-	print("do: " + selected_action)
 	_show_progress()
 
 
@@ -79,7 +78,8 @@ func _good_cut():
 	_new_thing()
 	done_player.play()
 	var chopped = chopping.pop_back()
-	chopped.set_type(cut_result[chopped.type])
+	if chopped != null:
+		chopped.set_type(cut_result[chopped.type])
 
 func _send_cut():
 	if (selected_action == typed):
