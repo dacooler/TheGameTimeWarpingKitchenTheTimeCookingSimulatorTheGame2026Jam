@@ -4,3 +4,9 @@
 
 [node name="Node2D" type="Node2D" unique_id=1352010802]
 script = ExtResource("1_ibthl")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=765323386]
+offset_left = 368.0
+offset_top = 130.0
+offset_right = 765.0
+offset_bottom = 336.0

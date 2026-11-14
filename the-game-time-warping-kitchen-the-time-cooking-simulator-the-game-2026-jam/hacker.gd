@@ -3,12 +3,15 @@ extends Node2D
 const IP_ADDRESS = "10.57.159.210"
 const PORT = 6767
 
+
 var typed = ""
+@onready var rich_text_label: RichTextLabel = $RichTextLabel
 
 var actions = [
 	"cutcutcutcut",
 	"slicesliceslice"
 ]
+
 
 var selected_action = ""
 
@@ -23,9 +26,17 @@ func _process(_delta: float) -> void:
 	pass
 	#send_hello_world_to_server.rpc("hello i am calling")
 	
+func _show_progress():
+	rich_text_label.clear()
+	rich_text_label.add_text(selected_action)
+	rich_text_label.add_text("\n")
+	rich_text_label.add_text(typed)
+	
 func _new_thing():
+	typed = ""
 	selected_action = actions.pick_random()
 	print("do: " + selected_action)
+	_show_progress()
 	
 func _unhandled_input(event : InputEvent) -> void:
 	if event is InputEventKey and event.is_pressed():
@@ -48,18 +59,19 @@ func _send_cut():
 	if (selected_action == typed):
 		print("onion")
 		_new_thing()
-	typed = ""
+	else:
+		_wrong_cut()
+		return
+	_show_progress()
+	
+func _wrong_cut():
+	_new_thing()
+	rich_text_label.push_color(Color.RED)
+	rich_text_label.add_text("\n WRONG")
 			
 func _type_cut(letter: String):
 	typed += letter
 	if (!_check_still_valid()):
-		print("WRONG")
-		typed = ""
-		_new_thing()
-	print(selected_action)
-	print(typed)
-
-
-@rpc("any_peer")
-func send_hello_world_to_server(hello: String):
-	pass
+		_wrong_cut()
+		return
+	_show_progress()
