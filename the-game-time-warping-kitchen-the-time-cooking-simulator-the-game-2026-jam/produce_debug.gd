@@ -10,10 +10,10 @@ func _ready():
 	remove.pressed.connect(_remove)
 
 func _process(_delta: float) -> void:
-	label.text = "Onions: " + str(server.produces[server.Produce.ONION])
+	label.text = "Onions: " + str(server.produces[Globals.Produce.ONION])
 
 func _add():
-	server.produces[server.Produce.ONION] += 1
+	server.produces[Globals.Produce.ONION] += 1
 
 func _remove():
-	server.produces[server.Produce.ONION] -= 1
+	server.produces[Globals.Produce.ONION] -= 1
