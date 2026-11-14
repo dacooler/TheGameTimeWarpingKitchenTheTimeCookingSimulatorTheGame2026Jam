@@ -8,4 +8,4 @@ func _ready():
 func _on_body_entered(body):
 	if !body.is_in_chopping_board:
 		body.is_in_chopping_board = true
-		chop.start_chopping(body)
+		chop.start_cutting(body)
