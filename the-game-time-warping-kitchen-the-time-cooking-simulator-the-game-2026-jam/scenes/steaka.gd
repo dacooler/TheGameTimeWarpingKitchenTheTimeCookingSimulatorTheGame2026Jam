@@ -1,13 +1,11 @@
 extends Node2D
 
-var cooking: Globals.Produce
-var cookingEmpty: bool = true
+var cooking: Dictionary[Globals.Produce, int] = {}
 var cookedPercent = 0
 @export var cookingSpeed: float;
 
 var rawToCooked = {
-	Globals.Produce.TOMATO: Globals.Produce.COOKED_TOMATO,
-	Globals.Produce.ONION: Globals.Produce.COOKED_ONION,
+	{Globals.Produce.TOMATO: 1, Globals.Produce.ONION: 1}: {Globals.Produce.COOKED_TOMATO : 1},
 }
 
 # Called when the node enters the scene tree for the first time.
@@ -17,7 +15,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if (cookingEmpty):
+	if (cooking.is_empty()):
 		return
 	cookedPercent += delta * cookingSpeed
 	if (cookedPercent < 100):
@@ -26,17 +24,16 @@ func _process(delta: float) -> void:
 	if (rawToCooked.has(cooking)):
 		cooking = (rawToCooked[cooking])
 	else:
-		cooking = Globals.Produce.ASH
+		cooking = {Globals.Produce.ASH : 1}
 	
 func _stop_cooking():
-	cookingEmpty = true
 	cookedPercent = 0
-	add_produce(cooking)
+	for produce in cooking:
+		add_produce(produce)
 	
-func _start_cooking_produce(produce: Globals.Produce):
+func _add_cooking_produce(produce: Globals.Produce):
 	remove_produce(produce)
-	cookingEmpty = false
-	cooking = produce
+	cooking.get_or_add(produce, 1)
 	cookedPercent = 0
 
 @rpc("any_peer")
