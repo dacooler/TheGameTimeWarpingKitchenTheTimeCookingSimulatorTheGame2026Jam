@@ -19,7 +19,7 @@ const ONION_CHOPPED = preload("res://images/cut_onion.png")
 const SAUCE = preload("res://images/tomato_sauce.png")
 const TOMATO_CHOPPED = preload("res://images/shoehorn.png")
 const ONION_SEED = preload("res://images/onion_seed.png")
-const TOMATO_SEED = preload("res://images/shoehorn.png")
+const TOMATO_SEED = preload("res://images/tomato_seed.png")
 
 
 static var produceImages = {
