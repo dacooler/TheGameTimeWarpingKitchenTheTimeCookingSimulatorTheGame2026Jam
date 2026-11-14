@@ -13,9 +13,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-	
+
 func grow_all():
 	plant.grow()
 	plant_2.grow()
 	plant_3.grow()
-	

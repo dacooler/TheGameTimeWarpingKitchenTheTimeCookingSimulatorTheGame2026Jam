@@ -10,13 +10,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-	
+
 func _on_body_entered(body: Node2D):
 	if (plant.planted):
 		return
 	if (plant.seed_to_produce.get(body.type) != null):
 		plant.plant(body.type)
 		body.queue_free()
-
-
-	

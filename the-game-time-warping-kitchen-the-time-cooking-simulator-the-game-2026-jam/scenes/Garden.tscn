@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c8yb5iyq2kjgp" path="res://images/greenhouse.webp" id="1_p33sf"]
 [ext_resource type="PackedScene" uid="uid://cl1dhqvwbcgqs" path="res://scenes/prefabs/plant.tscn" id="2_a07rb"]
 [ext_resource type="PackedScene" uid="uid://dgugmtsxvgb82" path="res://scenes/prefabs/basket.tscn" id="3_fatj7"]
-[ext_resource type="Texture2D" uid="uid://dpxin86iquiyx" path="res://images/shoehorn.jpg" id="5_sdi01"]
+[ext_resource type="Texture2D" uid="uid://dc5amjxtdnmty" path="res://images/shoehorn.png" id="5_sdi01"]
 [ext_resource type="Script" uid="uid://ce7kmvp16f3n2" path="res://scenes/shoehorn.gd" id="6_sdi01"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_1jxca"]
@@ -18,11 +18,11 @@ scale = Vector2(1159.5, -644.00006)
 mesh = SubResource("QuadMesh_1jxca")
 texture = ExtResource("1_p33sf")
 
-[node name="Plant" parent="." unique_id=472888806 instance=ExtResource("2_a07rb")]
-position = Vector2(-120, -17)
-
 [node name="Basket" parent="." unique_id=626660133 instance=ExtResource("3_fatj7")]
 position = Vector2(161, 492)
+
+[node name="Plant" parent="." unique_id=472888806 instance=ExtResource("2_a07rb")]
+position = Vector2(-120, -17)
 
 [node name="shoehorn" type="Button" parent="." unique_id=1433523915]
 offset_left = 19.0

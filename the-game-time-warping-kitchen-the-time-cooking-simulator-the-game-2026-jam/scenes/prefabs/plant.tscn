@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://b2fal6urtbb7u" path="res://scenes/prefabs/plant.gd" id="1_hiuae"]
 [ext_resource type="Texture2D" uid="uid://m58dwpncaya" path="res://images/pot.png" id="1_t1rim"]
-[ext_resource type="Texture2D" uid="uid://bn7en5xkegemx" path="res://images/seedling.webp" id="2_0aldq"]
 [ext_resource type="Script" uid="uid://c6noytmg7n8bm" path="res://scenes/prefabs/plantbox.gd" id="3_hiuae"]
+[ext_resource type="Texture2D" uid="uid://wkf5owt4n3ej" path="res://images/tomato_seedling.png" id="4_hiuae"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m1b0l"]
 size = Vector2(113, 102)
@@ -41,7 +41,7 @@ shape = SubResource("RectangleShape2D_ii7jg")
 
 [node name="Sprout" type="MeshInstance2D" parent="." unique_id=611743090]
 visible = false
-position = Vector2(588, 499.99997)
-scale = Vector2(103.5, -87.5)
+position = Vector2(593, 509)
+scale = Vector2(370.18753, -312.96045)
 mesh = SubResource("QuadMesh_m1b0l")
-texture = ExtResource("2_0aldq")
+texture = ExtResource("4_hiuae")
