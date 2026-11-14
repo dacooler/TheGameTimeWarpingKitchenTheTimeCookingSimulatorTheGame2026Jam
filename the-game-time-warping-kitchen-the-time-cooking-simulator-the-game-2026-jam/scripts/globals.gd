@@ -11,21 +11,13 @@ enum Produce {
 	TOMATO_SEED
 }
 const ASH = preload("uid://ccc0nxw0hf6hc")
-<<<<<<< HEAD
-const TOMATO = preload("uid://byqa1rf148246")
-const ONION_CHOPPED = preload("uid://cpi5xtyfyoxxd")
-const ONION = preload("uid://bojgpg1f26ws8")
-const SAUCE = preload("uid://cybkytvgiuri7")
-const TOMATO_COOKED = preload("uid://di6c6fitmaqp6")
-const ONION_SEED = preload("uid://bn7en5xkegemx")
-const TOMATO_SEED = preload("uid://jteskuesaafy")
-=======
-const ONION_CHOPPED = preload("uid://ddsxfbum3h6lg")
+const ONION_SEED = preload("uid://djsepbv5t3e78")
+const TOMATO_SEED = preload("uid://dw3tq4wi4iw5f")
+const ONION_CHOPPED = preload("res://images/cut_onion.png")
 const SAUCE = preload("uid://cybkytvgiuri7")
 const TOMATO_COOKED = preload("uid://di6c6fitmaqp6")
 const TOMATO = preload("uid://cbfllugif8qoa")
 const ONION = preload("uid://svou3n3450pm")
->>>>>>> 1a037c6d9e6a9409c72beee832453d5736f20b7c
 
 static var produceImages = {
 	Produce.ASH : ASH,
