@@ -11,6 +11,9 @@ var actions = [
 	"slicesliceslice"
 ]
 
+@onready var cut_player: AudioStreamPlayer2D = $CutPlayer
+@onready var done_player: AudioStreamPlayer2D = $DonePlayer
+
 
 var selected_action = ""
 
@@ -58,6 +61,7 @@ func _check_still_valid():
 func _good_cut():
 	add_produce.rpc(Globals.Produce.ONION)
 	_new_thing()
+	done_player.play()
 	rich_text_label.add_text("\n +1 Onion")
 
 func _send_cut():
@@ -76,6 +80,8 @@ func _type_cut(letter: String):
 	if (!_check_still_valid()):
 		_wrong_cut()
 		return
+	else:
+		cut_player.play()
 	_show_progress()
 
 
