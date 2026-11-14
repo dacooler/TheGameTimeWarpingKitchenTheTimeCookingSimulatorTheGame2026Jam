@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cp8cq17ymuyqy"]
+
+[ext_resource type="Script" uid="uid://coe32wgs16xir" path="res://produce_falling.gd" id="1_njb0p"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ii7jg"]
+radius = 62.008064
+
+[sub_resource type="QuadMesh" id="QuadMesh_njb0p"]
+
+[node name="RigidBody2D" type="RigidBody2D" unique_id=1344742376]
+input_pickable = true
+gravity_scale = 0.0
+linear_velocity = Vector2(0, 400)
+script = ExtResource("1_njb0p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=720274212]
+position = Vector2(484.375, -169.375)
+shape = SubResource("CircleShape2D_ii7jg")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=303815776]
+position = Vector2(484, -168)
+scale = Vector2(118.75001, -117.25001)
+mesh = SubResource("QuadMesh_njb0p")
