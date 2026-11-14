@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://7xo8mbumihps"]
 
 [ext_resource type="Script" uid="uid://bie65yij8sin2" path="res://scripts/onion.gd" id="1_0aku4"]
-[ext_resource type="Texture2D" uid="uid://ddsxfbum3h6lg" path="res://images/onion.jpg" id="2_2scbw"]
+[ext_resource type="Texture2D" uid="uid://ddsxfbum3h6lg" path="res://images/onion_chopped.jpg" id="2_2scbw"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4edkc"]
 

@@ -3,6 +3,7 @@ extends Node2D
 var foodTimer = 0
 @export var foodTime: float;
 const PRODUCE_FALLING = preload("uid://cp8cq17ymuyqy")
+@onready var basket: Node2D = $Basket
 
 
 
@@ -21,8 +22,6 @@ func _process(delta: float) -> void:
 func _spawn_produce():
 	var instance = PRODUCE_FALLING.instantiate()
 	add_child(instance)
-	pass
 	
 func pick_produce(produce: Globals.Produce):
-	print("lök")
-	pass
+	basket.add_produce_2(produce)

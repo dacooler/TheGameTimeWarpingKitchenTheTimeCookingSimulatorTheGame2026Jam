@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ydgvbhqad44u" path="res://scenes/steaka.gd" id="1_o5rkf"]
 [ext_resource type="Texture2D" uid="uid://b1waqfj3lmwvr" path="res://images/fryingpan.jpg" id="2_5pugn"]
+[ext_resource type="PackedScene" uid="uid://dgugmtsxvgb82" path="res://scenes/prefabs/basket.tscn" id="3_e2was"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_o5rkf"]
 
@@ -14,3 +15,6 @@ position = Vector2(576.12494, 323.625)
 scale = Vector2(1153.7499, -644.74994)
 mesh = SubResource("QuadMesh_o5rkf")
 texture = ExtResource("2_5pugn")
+
+[node name="Basket" parent="." unique_id=626660133 instance=ExtResource("3_e2was")]
+position = Vector2(163, 518)

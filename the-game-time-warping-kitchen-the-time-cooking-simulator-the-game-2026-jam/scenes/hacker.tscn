@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://2v24t3ukr5mt" path="res://audio/sfx/shwing-002.wav" id="6_jcnlv"]
 [ext_resource type="AudioStream" uid="uid://b64bt8nj5wowa" path="res://audio/sfx/shwing-003.wav" id="7_pvidj"]
 [ext_resource type="Texture2D" uid="uid://b5rcftq5usjc3" path="res://images/cuttingboard.jpg" id="8_jcnlv"]
+[ext_resource type="AudioStream" uid="uid://csmwxg2mc310x" path="res://audio/sfx/error.wav" id="8_qvh4k"]
 [ext_resource type="PackedScene" uid="uid://dgugmtsxvgb82" path="res://scenes/prefabs/basket.tscn" id="9_pvidj"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ii7jg"]
@@ -34,6 +35,7 @@ stream = SubResource("AudioStreamRandomizer_ii7jg")
 stream = SubResource("AudioStreamRandomizer_7hd4y")
 
 [node name="WrongCutPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1911115412]
+stream = ExtResource("8_qvh4k")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=765323386]
 z_index = 1

@@ -3,22 +3,23 @@ class_name Globals
 enum Produce {
 	ONION,
 	TOMATO,
-	COOKED_ONION,
-	COOKED_TOMATO,
+	CHOPPED_ONION,
+	CHOPPED_TOMATO,
+	SAUCE,
 	ASH,
 }
 const ASH = preload("uid://ccc0nxw0hf6hc")
-const ONION_COOKED = preload("uid://bqf5mkucndggp")
 const TOMATO = preload("uid://byqa1rf148246")
-const TOMATO_COOKED = preload("uid://di6c6fitmaqp6")
-const ONION = preload("uid://ddsxfbum3h6lg")
+const ONION_CHOPPED = preload("uid://ddsxfbum3h6lg")
+const ONION = preload("uid://bojgpg1f26ws8")
+const SAUCE = preload("uid://cybkytvgiuri7")
 
 static var produceImages = {
 	Produce.ASH : ASH,
-	Produce.COOKED_ONION: ONION_COOKED,
-	Produce.COOKED_TOMATO: TOMATO_COOKED,
 	Produce.TOMATO: TOMATO,
 	Produce.ONION: ONION,
+	Produce.CHOPPED_ONION: ONION_CHOPPED,
+	Produce.SAUCE: SAUCE
 }
 
 const IP_ADDRESS := "172.20.40.220"

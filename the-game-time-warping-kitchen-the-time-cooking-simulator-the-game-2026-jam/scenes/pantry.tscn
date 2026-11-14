@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://80645ckpgg07"]
 
 [ext_resource type="Script" uid="uid://bvng5cbaflb37" path="res://scenes/pantry.gd" id="1_2ec4p"]
-[ext_resource type="PackedScene" uid="uid://cp8cq17ymuyqy" path="res://produceFalling.tscn" id="2_tw74k"]
+[ext_resource type="PackedScene" uid="uid://cp8cq17ymuyqy" path="res://scenes/prefabs/produceFalling.tscn" id="2_tw74k"]
 [ext_resource type="Texture2D" uid="uid://bdm7gnxn54yj8" path="res://images/pantry.jpg" id="3_1jxca"]
+[ext_resource type="PackedScene" uid="uid://dgugmtsxvgb82" path="res://scenes/prefabs/basket.tscn" id="4_mralp"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_ii7jg"]
 
@@ -18,3 +19,6 @@ position = Vector2(571.00006, 334.99994)
 scale = Vector2(1149.5, -584.5)
 mesh = SubResource("QuadMesh_ii7jg")
 texture = ExtResource("3_1jxca")
+
+[node name="Basket" parent="." unique_id=626660133 instance=ExtResource("4_mralp")]
+position = Vector2(-164, 601)

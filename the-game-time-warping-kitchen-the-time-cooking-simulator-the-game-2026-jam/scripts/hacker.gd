@@ -14,6 +14,7 @@ var actions = [
 
 @onready var cut_player: AudioStreamPlayer2D = $CutPlayer
 @onready var done_player: AudioStreamPlayer2D = $DonePlayer
+@onready var wrong_cut_player: AudioStreamPlayer2D = $WrongCutPlayer
 
 
 var selected_action = ""
@@ -73,6 +74,7 @@ func _send_cut():
 
 func _wrong_cut():
 	_new_thing()
+	wrong_cut_player.play()
 	rich_text_label.push_color(Color.RED)
 	rich_text_label.add_text("\n WRONG")
 
