@@ -3,14 +3,9 @@ extends Node2D
 const PORT = 6767
 const MAX_CLIENTS = 7
 
-enum Produce {
-	ONION,
-	TOMATO,
-}
-
 var produces = {
-	Produce.ONION: 0,
-	Produce.TOMATO: 0,
+	Globals.Produce.ONION: 0,
+	Globals.Produce.TOMATO: 0,
 }
 
 func _ready():
@@ -26,10 +21,10 @@ func _process(delta: float) -> void:
 		delta = 0
 
 @rpc("any_peer")
-func add_produce(produce: Produce):
+func add_produce(produce: Globals.Produce):
 	produces[produce] += 1
 
 @rpc("any_peer")
-func remove_produce(produce: Produce):
+func remove_produce(produce: Globals.Produce):
 	if produces[produce] > 0:
 		produces[produce] -= 1

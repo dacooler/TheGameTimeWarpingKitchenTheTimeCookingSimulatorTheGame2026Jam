@@ -1,6 +1,6 @@
 extends Node2D
 
-const IP_ADDRESS = "10.57.159.210"
+const IP_ADDRESS = "172.20.40.220"
 const PORT = 6767
 
 
@@ -38,31 +38,34 @@ func _new_thing():
 	print("do: " + selected_action)
 	_show_progress()
 	
+
 func _unhandled_input(event : InputEvent) -> void:
 	if event is InputEventKey and event.is_pressed():
 		var key_event := event as InputEventKey
-		
+
 		# filter for printable characters
 		if (key_event.keycode == KEY_ENTER):
 			_send_cut()
 		if !(key_event.keycode & KEY_SPECIAL):
 			var letter := String.chr(key_event.unicode)
-			
+
 			# do whatever with "letter"
-			
+
 			_type_cut(letter)
 			# or on non-control nodes: get_viewport().set_input_as_handled()
 func _check_still_valid():
 	return selected_action.begins_with(typed)
-			
+
+func _good_cut():
+	add_produce.rpc(Globals.Produce.ONION)
+	_new_thing()
+	rich_text_label.add_text("\n +1 Onion")
+
 func _send_cut():
 	if (selected_action == typed):
-		print("onion")
-		_new_thing()
+		_good_cut()
 	else:
 		_wrong_cut()
-		return
-	_show_progress()
 	
 func _wrong_cut():
 	_new_thing()
@@ -75,3 +78,12 @@ func _type_cut(letter: String):
 		_wrong_cut()
 		return
 	_show_progress()
+
+
+@rpc("any_peer")
+func send_hello_world_to_server(hello: String):
+	pass
+
+@rpc("any_peer")
+func add_produce(produce: Globals.Produce):
+	pass
