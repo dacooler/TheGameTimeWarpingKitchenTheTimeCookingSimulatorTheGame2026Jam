@@ -5,16 +5,16 @@
 [ext_resource type="Script" uid="uid://e7bx0g1uteai" path="res://scripts/basket_content_area.gd" id="3_tqdpv"]
 [ext_resource type="Script" uid="uid://r1eyrxiqdo05" path="res://scripts/basket_leave_area.gd" id="4_jstp7"]
 
+[sub_resource type="QuadMesh" id="QuadMesh_6vm1l"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6vm1l"]
-size = Vector2(16, 48)
+size = Vector2(34, 77)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ec42o"]
-size = Vector2(12, 40)
+size = Vector2(31, 74)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qx6nb"]
 size = Vector2(263, 12)
-
-[sub_resource type="QuadMesh" id="QuadMesh_6vm1l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vo2pc"]
 size = Vector2(258, 41.5)
@@ -27,23 +27,24 @@ script = ExtResource("1_0xmcu")
 
 [node name="Basket" type="StaticBody2D" parent="." unique_id=484394956]
 
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Basket" unique_id=1085697785]
+position = Vector2(-29, 12)
+rotation = 3.1415927
+scale = Vector2(563.83765, 597.1047)
+mesh = SubResource("QuadMesh_6vm1l")
+texture = ExtResource("2_cp4a1")
+
 [node name="left_wall" type="CollisionShape2D" parent="Basket" unique_id=1972678306]
-position = Vector2(-132, 76)
+position = Vector2(-123, 61.5)
 shape = SubResource("RectangleShape2D_6vm1l")
 
 [node name="right-wall" type="CollisionShape2D" parent="Basket" unique_id=978291451]
-position = Vector2(137, 73)
+position = Vector2(127.5, 56)
 shape = SubResource("RectangleShape2D_ec42o")
 
 [node name="bottomWall" type="CollisionShape2D" parent="Basket" unique_id=1322202915]
 position = Vector2(0.5, 103)
 shape = SubResource("RectangleShape2D_qx6nb")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Basket" unique_id=1085697785]
-position = Vector2(2, 6)
-scale = Vector2(-440.2378, -273.9048)
-mesh = SubResource("QuadMesh_6vm1l")
-texture = ExtResource("2_cp4a1")
 
 [node name="BasketContentArea" type="Area2D" parent="." unique_id=1452437827]
 collision_layer = 2

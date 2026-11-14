@@ -10,10 +10,10 @@ enum Produce {
 }
 const ASH = preload("uid://ccc0nxw0hf6hc")
 const ONION_CHOPPED = preload("uid://ddsxfbum3h6lg")
-const SAUCE = preload("uid://cybkytvgiuri7")
 const TOMATO_COOKED = preload("uid://di6c6fitmaqp6")
 const TOMATO = preload("uid://cbfllugif8qoa")
 const ONION = preload("uid://svou3n3450pm")
+const SAUCE = preload("uid://b4mr01ltuagdp")
 
 static var produceImages = {
 	Produce.ASH : ASH,
