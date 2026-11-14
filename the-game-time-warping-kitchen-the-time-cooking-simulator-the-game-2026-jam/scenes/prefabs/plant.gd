@@ -17,6 +17,7 @@ func _ready() -> void:
 
 func plant(seed: Globals.Produce):
 	sprout.visible = true
+	type = seed_to_produce[seed]
 	planted = true
 
 func unplant():
