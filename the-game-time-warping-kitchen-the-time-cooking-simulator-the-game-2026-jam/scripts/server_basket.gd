@@ -9,6 +9,7 @@ func _ready():
 	var peer = ENetMultiplayerPeer.new()
 	peer.create_server(Globals.PORT, Globals.MAX_CLIENTS)
 	multiplayer.multiplayer_peer = peer
+	get_content.rpc(produces)
 
 var time: float = 0
 func _process(delta: float) -> void:
@@ -20,14 +21,19 @@ func _process(delta: float) -> void:
 @rpc("any_peer")
 func add_produce(produce: Globals.Produce):
 	produces[produce] += 1
-	get_content(produces)
+	get_content.rpc(produces)
 
 @rpc("any_peer")
 func remove_produce(produce: Globals.Produce):
 	if produces[produce] > 0:
 		produces[produce] -= 1
-		get_content(produces)
+		get_content.rpc(produces)
+
 
 @rpc("any_peer")
-func get_content(produces: Dictionary[Globals.Produce, int]):
+func request_get_content():
+	get_content.rpc(produces)
+
+@rpc("any_peer")
+func get_content(_produces: Dictionary[Globals.Produce, int]):
 	pass
