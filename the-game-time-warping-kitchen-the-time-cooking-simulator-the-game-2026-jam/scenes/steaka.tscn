@@ -6,15 +6,30 @@
 
 [sub_resource type="QuadMesh" id="QuadMesh_o5rkf"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ii7jg"]
+size = Vector2(541, 85)
+
 [node name="Node2D" type="Node2D" unique_id=82442031]
 script = ExtResource("1_o5rkf")
 cookingSpeed = 1.0
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=117857047]
-position = Vector2(576.12494, 323.625)
-scale = Vector2(1153.7499, -644.74994)
+[node name="Basket" parent="." unique_id=626660133 instance=ExtResource("3_e2was")]
+position = Vector2(102, 506)
+
+[node name="FryingPan" type="StaticBody2D" parent="." unique_id=602204839]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="FryingPan" unique_id=117857047]
+z_index = -1
+position = Vector2(419.31253, 387.00006)
+scale = Vector2(975.37506, -252.00002)
 mesh = SubResource("QuadMesh_o5rkf")
 texture = ExtResource("2_5pugn")
 
-[node name="Basket" parent="." unique_id=626660133 instance=ExtResource("3_e2was")]
-position = Vector2(163, 518)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FryingPan" unique_id=2143143460]
+polygon = PackedVector2Array(309, 365, 374, 433, 792, 436, 857, 372, 796, 454, 366, 450)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1812641994]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1462211614]
+position = Vector2(583.5, 406.5)
+shape = SubResource("RectangleShape2D_ii7jg")

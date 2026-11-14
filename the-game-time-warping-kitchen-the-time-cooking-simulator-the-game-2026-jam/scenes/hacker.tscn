@@ -11,6 +11,9 @@
 [ext_resource type="AudioStream" uid="uid://csmwxg2mc310x" path="res://audio/sfx/error.wav" id="8_qvh4k"]
 [ext_resource type="PackedScene" uid="uid://dgugmtsxvgb82" path="res://scenes/prefabs/basket.tscn" id="9_pvidj"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ii7jg"]
+size = Vector2(1091, 101)
+
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ii7jg"]
 streams_count = 3
 stream_0/stream = ExtResource("2_7hd4y")
@@ -25,8 +28,17 @@ stream_2/stream = ExtResource("7_pvidj")
 
 [sub_resource type="QuadMesh" id="QuadMesh_j2lhl"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m1b0l"]
+size = Vector2(1.0114444, 0.3917923)
+
 [node name="Node2D" type="Node2D" unique_id=1352010802]
 script = ExtResource("1_xhhnb")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=79635887]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=838612427]
+position = Vector2(591, 598)
+shape = SubResource("RectangleShape2D_ii7jg")
 
 [node name="CutPlayer" type="AudioStreamPlayer2D" parent="." unique_id=779732461]
 stream = SubResource("AudioStreamRandomizer_ii7jg")
@@ -44,11 +56,21 @@ offset_top = 130.00003
 offset_right = 765.0
 offset_bottom = 336.00003
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=170348588]
-position = Vector2(573.9486, 324.48712)
-rotation = -3.1415927
+[node name="Basket" parent="." unique_id=1565680274 instance=ExtResource("9_pvidj")]
+position = Vector2(183, 382)
+
+[node name="CuttingBoard" type="StaticBody2D" parent="." unique_id=593789637]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CuttingBoard" unique_id=170348588]
+z_index = -1
+position = Vector2(579.00006, 578.99994)
+rotation = 3.1415925
 scale = Vector2(1144.8972, 647.97424)
 mesh = SubResource("QuadMesh_j2lhl")
 texture = ExtResource("8_jcnlv")
 
-[node name="Basket" parent="." unique_id=1565680274 instance=ExtResource("9_pvidj")]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CuttingBoard" unique_id=2106542180]
+position = Vector2(572.00006, 774.00006)
+rotation = 3.1415925
+scale = Vector2(1144.8972, 647.97424)
+shape = SubResource("RectangleShape2D_m1b0l")
