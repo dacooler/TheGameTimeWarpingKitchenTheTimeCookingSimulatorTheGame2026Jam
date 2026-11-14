@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://7xo8mbumihps"]
 
 [ext_resource type="Script" uid="uid://bie65yij8sin2" path="res://scripts/onion.gd" id="1_0aku4"]
-[ext_resource type="Texture2D" uid="uid://bojgpg1f26ws8" path="res://images/onion.jpg" id="2_2scbw"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4edkc"]
 
@@ -25,4 +24,3 @@ shape = SubResource("CircleShape2D_6vm1l")
 position = Vector2(2, 3.3999977)
 scale = Vector2(257.99997, 247.68)
 mesh = SubResource("QuadMesh_ec42o")
-texture = ExtResource("2_2scbw")
