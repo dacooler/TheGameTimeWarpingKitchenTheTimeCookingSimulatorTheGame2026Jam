@@ -30,7 +30,6 @@ func _get_recipie() -> Dictionary[Globals.Produce, int]:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var recipie = _get_recipie()
-	print(recipie)
 
 	if (recipie.is_empty()):
 		return

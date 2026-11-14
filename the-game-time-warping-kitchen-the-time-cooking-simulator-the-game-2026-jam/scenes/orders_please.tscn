@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://d6aq35oepa7d" path="res://scripts/orders_please.gd" id="1_gppf8"]
 [ext_resource type="Texture2D" uid="uid://d2xt1jemxgi7d" path="res://images/orders_please.jpg" id="2_lk0oa"]
 [ext_resource type="PackedScene" uid="uid://dgugmtsxvgb82" path="res://scenes/prefabs/basket.tscn" id="4_4edkc"]
+[ext_resource type="Script" uid="uid://pmupw4c23yl4" path="res://scripts/plate.gd" id="4_kjnmp"]
+[ext_resource type="Texture2D" uid="uid://ckjdmwruigm0c" path="res://images/plate.png" id="5_topsq"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_6vm1l"]
 
@@ -16,6 +18,11 @@ size = Vector2(168, 898)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4edkc"]
 size = Vector2(262, 818)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ec42o"]
+size = Vector2(158, 124)
+
+[sub_resource type="QuadMesh" id="QuadMesh_ec42o"]
 
 [node name="Node2D" type="Node2D" unique_id=1434163687]
 script = ExtResource("1_gppf8")
@@ -80,3 +87,20 @@ mesh = SubResource("QuadMesh_qx6nb")
 
 [node name="Basket" parent="." unique_id=626660133 instance=ExtResource("4_4edkc")]
 position = Vector2(160, 545)
+
+[node name="Plate" type="Area2D" parent="." unique_id=1737140348]
+position = Vector2(1000, 350)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("4_kjnmp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plate" unique_id=1514517663]
+position = Vector2(-10.177246, 1.8226318)
+shape = SubResource("RectangleShape2D_ec42o")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Plate" unique_id=906905526]
+position = Vector2(2.822754, -16.177338)
+rotation = -3.1415927
+scale = Vector2(297.6454, 297.64526)
+mesh = SubResource("QuadMesh_ec42o")
+texture = ExtResource("5_topsq")
