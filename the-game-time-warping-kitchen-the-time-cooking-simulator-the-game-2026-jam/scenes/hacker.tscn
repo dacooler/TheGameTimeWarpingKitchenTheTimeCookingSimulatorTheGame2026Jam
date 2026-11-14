@@ -33,7 +33,7 @@ stream_2/stream = ExtResource("7_pvidj")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m1b0l"]
 size = Vector2(1.0114444, 0.3917923)
 
-[node name="Node2D2" type="Node2D" unique_id=1352010802]
+[node name="Node2D" type="Node2D" unique_id=1352010802]
 script = ExtResource("1_xhhnb")
 
 [node name="CuttingBoardExitArea" type="Area2D" parent="." unique_id=1508558130]
@@ -70,9 +70,6 @@ offset_top = 130.00003
 offset_right = 765.0
 offset_bottom = 336.00003
 
-[node name="Basket" parent="." unique_id=1565680274 instance=ExtResource("9_pvidj")]
-position = Vector2(183, 382)
-
 [node name="CuttingBoard" type="StaticBody2D" parent="." unique_id=593789637]
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="CuttingBoard" unique_id=170348588]
@@ -88,3 +85,6 @@ position = Vector2(572.00006, 774.00006)
 rotation = 3.1415925
 scale = Vector2(1144.8972, 647.97424)
 shape = SubResource("RectangleShape2D_m1b0l")
+
+[node name="Basket" parent="." unique_id=626660133 instance=ExtResource("9_pvidj")]
+position = Vector2(178, 386)
