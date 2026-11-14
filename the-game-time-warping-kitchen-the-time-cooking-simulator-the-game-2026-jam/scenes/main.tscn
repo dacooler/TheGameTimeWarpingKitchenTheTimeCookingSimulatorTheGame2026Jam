@@ -19,3 +19,11 @@ offset_right = 966.0
 offset_bottom = 654.0
 script = ExtResource("1_o5qli")
 scene = "res://scenes/hacker.tscn"
+
+[node name="OrdersPleaseButton" type="Button" parent="." unique_id=668079960]
+offset_left = 869.0
+offset_top = 234.0
+offset_right = 1321.0
+offset_bottom = 364.0
+script = ExtResource("1_o5qli")
+scene = "res://scenes/orders_please.tscn"
