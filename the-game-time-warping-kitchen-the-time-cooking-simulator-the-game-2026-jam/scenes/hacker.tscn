@@ -1,12 +1,49 @@
 [gd_scene format=3 uid="uid://2k88v80e62qs"]
 
 [ext_resource type="Script" uid="uid://u2xpdwdjkc4e" path="res://scripts/hacker.gd" id="1_xhhnb"]
+[ext_resource type="AudioStream" uid="uid://bjrkabvbs6jxy" path="res://audio/sfx/cut-001.wav" id="2_7hd4y"]
+[ext_resource type="AudioStream" uid="uid://dvv0mt5rdavm2" path="res://audio/sfx/cut-002.wav" id="3_mv7c3"]
+[ext_resource type="AudioStream" uid="uid://deni2yba2v7vy" path="res://audio/sfx/cut-003.wav" id="4_45auw"]
+[ext_resource type="AudioStream" uid="uid://b3i2wne7h3jmj" path="res://audio/sfx/shwing-001.wav" id="5_j2lhl"]
+[ext_resource type="AudioStream" uid="uid://2v24t3ukr5mt" path="res://audio/sfx/shwing-002.wav" id="6_jcnlv"]
+[ext_resource type="AudioStream" uid="uid://b64bt8nj5wowa" path="res://audio/sfx/shwing-003.wav" id="7_pvidj"]
+[ext_resource type="Texture2D" uid="uid://b5rcftq5usjc3" path="res://images/cuttingboard.jpg" id="8_jcnlv"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ii7jg"]
+streams_count = 3
+stream_0/stream = ExtResource("2_7hd4y")
+stream_1/stream = ExtResource("3_mv7c3")
+stream_2/stream = ExtResource("4_45auw")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_7hd4y"]
+streams_count = 3
+stream_0/stream = ExtResource("5_j2lhl")
+stream_1/stream = ExtResource("6_jcnlv")
+stream_2/stream = ExtResource("7_pvidj")
+
+[sub_resource type="QuadMesh" id="QuadMesh_j2lhl"]
 
 [node name="Node2D" type="Node2D" unique_id=1352010802]
 script = ExtResource("1_xhhnb")
 
+[node name="CutPlayer" type="AudioStreamPlayer2D" parent="." unique_id=779732461]
+stream = SubResource("AudioStreamRandomizer_ii7jg")
+
+[node name="DonePlayer" type="AudioStreamPlayer2D" parent="." unique_id=631660896]
+stream = SubResource("AudioStreamRandomizer_7hd4y")
+
+[node name="WrongCutPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1911115412]
+
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=765323386]
-offset_left = 368.0
-offset_top = 130.0
+z_index = 1
+offset_left = 367.99997
+offset_top = 130.00003
 offset_right = 765.0
-offset_bottom = 336.0
+offset_bottom = 336.00003
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=170348588]
+position = Vector2(573.9486, 324.48712)
+rotation = -3.1415927
+scale = Vector2(1144.8972, 647.97424)
+mesh = SubResource("QuadMesh_j2lhl")
+texture = ExtResource("8_jcnlv")
