@@ -7,6 +7,8 @@ var produces: Dictionary[Globals.Produce, int] = {
 	Globals.Produce.CHOPPED_TOMATO: 0,
 	Globals.Produce.SAUCE: 0,
 	Globals.Produce.ASH: 0,
+	Globals.Produce.ONION_SEED: 0,
+	Globals.Produce.TOMATO_SEED: 0
 }
 
 func _ready():

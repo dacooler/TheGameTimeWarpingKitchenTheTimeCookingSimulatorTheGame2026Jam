@@ -6,8 +6,8 @@ var foodTimer = 0
 const ONION = preload("uid://7xo8mbumihps")
 
 var products =[
-	Globals.Produce.ONION,
-	Globals.Produce.TOMATO,
+	Globals.Produce.ONION_SEED,
+	Globals.Produce.TOMATO_SEED,
 ]
 
 # Called when the node enters the scene tree for the first time.
