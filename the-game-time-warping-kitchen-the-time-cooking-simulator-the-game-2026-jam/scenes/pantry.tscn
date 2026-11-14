@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://80645ckpgg07"]
+
+[ext_resource type="Script" uid="uid://bvng5cbaflb37" path="res://scenes/pantry.gd" id="1_2ec4p"]
+[ext_resource type="PackedScene" uid="uid://cp8cq17ymuyqy" path="res://produceFalling.tscn" id="2_tw74k"]
+[ext_resource type="Texture2D" uid="uid://bdm7gnxn54yj8" path="res://images/pantry.jpg" id="3_1jxca"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_ii7jg"]
+
+[node name="Node2D" type="Node2D" unique_id=2095492187]
+script = ExtResource("1_2ec4p")
+foodTime = 2.0
+
+[node name="RigidBody2D" parent="." unique_id=1344742376 instance=ExtResource("2_tw74k")]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1749394697]
+z_index = -1
+position = Vector2(571.00006, 334.99994)
+scale = Vector2(1149.5, -584.5)
+mesh = SubResource("QuadMesh_ii7jg")
+texture = ExtResource("3_1jxca")
