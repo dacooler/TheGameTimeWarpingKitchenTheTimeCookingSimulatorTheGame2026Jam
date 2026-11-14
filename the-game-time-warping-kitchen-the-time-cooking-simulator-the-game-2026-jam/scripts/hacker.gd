@@ -3,7 +3,6 @@ extends Node2D
 const IP_ADDRESS = "172.20.40.220"
 const PORT = 6767
 
-
 var typed = ""
 @onready var rich_text_label: RichTextLabel = $RichTextLabel
 
@@ -17,7 +16,7 @@ var selected_action = ""
 
 func _ready():
 	var peer = ENetMultiplayerPeer.new()
-	peer.create_client(IP_ADDRESS, PORT)
+	peer.create_client(Globals.IP_ADDRESS, Globals.PORT)
 	multiplayer.multiplayer_peer = peer
 	set_process_unhandled_input(true)
 	_new_thing()
@@ -25,19 +24,19 @@ func _ready():
 func _process(_delta: float) -> void:
 	pass
 	#send_hello_world_to_server.rpc("hello i am calling")
-	
+
 func _show_progress():
 	rich_text_label.clear()
 	rich_text_label.add_text(selected_action)
 	rich_text_label.add_text("\n")
 	rich_text_label.add_text(typed)
-	
+
 func _new_thing():
 	typed = ""
 	selected_action = actions.pick_random()
 	print("do: " + selected_action)
 	_show_progress()
-	
+
 
 func _unhandled_input(event : InputEvent) -> void:
 	if event is InputEventKey and event.is_pressed():
@@ -66,12 +65,12 @@ func _send_cut():
 		_good_cut()
 	else:
 		_wrong_cut()
-	
+
 func _wrong_cut():
 	_new_thing()
 	rich_text_label.push_color(Color.RED)
 	rich_text_label.add_text("\n WRONG")
-			
+
 func _type_cut(letter: String):
 	typed += letter
 	if (!_check_still_valid()):

@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://02onwc8m3isq"]
 
-[ext_resource type="Script" uid="uid://uotrg5imcmb8" path="res://server.gd" id="1_ob30c"]
-[ext_resource type="Script" uid="uid://do3gqnvg0dsin" path="res://produce_debug.gd" id="2_h8t3n"]
+[ext_resource type="Script" uid="uid://uotrg5imcmb8" path="res://scripts/server.gd" id="1_h8t3n"]
+[ext_resource type="Script" uid="uid://do3gqnvg0dsin" path="res://scripts/produce_debug.gd" id="2_imety"]
 
 [node name="Node2D" type="Node2D" unique_id=854352001]
-script = ExtResource("1_ob30c")
+script = ExtResource("1_h8t3n")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=588721190]
-script = ExtResource("2_h8t3n")
+script = ExtResource("2_imety")
 
 [node name="Label" type="Label" parent="Node2D" unique_id=279355984]
 offset_left = 154.0

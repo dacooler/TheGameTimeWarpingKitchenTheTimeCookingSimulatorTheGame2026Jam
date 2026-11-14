@@ -1,8 +1,5 @@
 extends Node2D
 
-const PORT = 6767
-const MAX_CLIENTS = 7
-
 var produces = {
 	Globals.Produce.ONION: 0,
 	Globals.Produce.TOMATO: 0,
@@ -10,7 +7,7 @@ var produces = {
 
 func _ready():
 	var peer = ENetMultiplayerPeer.new()
-	peer.create_server(PORT, MAX_CLIENTS)
+	peer.create_server(Globals.PORT, Globals.MAX_CLIENTS)
 	multiplayer.multiplayer_peer = peer
 
 var time: float = 0

@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://2k88v80e62qs"]
 
-[ext_resource type="Script" uid="uid://u2xpdwdjkc4e" path="res://hacker.gd" id="1_ibthl"]
+[ext_resource type="Script" uid="uid://u2xpdwdjkc4e" path="res://scripts/hacker.gd" id="1_xhhnb"]
 
 [node name="Node2D" type="Node2D" unique_id=1352010802]
-script = ExtResource("1_ibthl")
+script = ExtResource("1_xhhnb")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=765323386]
 offset_left = 368.0
