@@ -2,6 +2,7 @@ extends RigidBody2D
 
 var is_draged := false
 var is_in_basket := true
+var is_in_choppingBoard := false
 var type: Globals.Produce
 
 @onready var mesh_instance_2d: MeshInstance2D = $MeshInstance2D
@@ -9,8 +10,10 @@ var type: Globals.Produce
 
 func set_type(produce: Globals.Produce):
 	type = produce
+	if (mesh_instance_2d != null):
+		mesh_instance_2d.texture = Globals.produceImages[produce]
 
-func _on_ready():
+func _ready():
 	mesh_instance_2d.texture = Globals.produceImages[type]
 
 func _input_event(_viewport, event, _shape_idx):

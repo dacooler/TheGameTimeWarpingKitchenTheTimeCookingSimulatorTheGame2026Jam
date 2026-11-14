@@ -14,7 +14,7 @@ var i_am: Globals.Produce
 func _ready() -> void:
 	i_am = products.pick_random()
 	mesh_instance_2d.texture = Globals.produceImages[i_am]
-	var position = randf_range(0, get_viewport_rect().size.x)
+	var position = randf_range(100, get_viewport_rect().size.x)
 	mesh_instance_2d.position.x = position
 	collision_shape_2d.position.x = position
 	pass # Replace with function body.

@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://2k88v80e62qs"]
 
 [ext_resource type="Script" uid="uid://u2xpdwdjkc4e" path="res://scripts/hacker.gd" id="1_xhhnb"]
+[ext_resource type="Script" uid="uid://dj124s45pmcov" path="res://scenes/cutting_board_exit_area.gd" id="2_5ownp"]
 [ext_resource type="AudioStream" uid="uid://bjrkabvbs6jxy" path="res://audio/sfx/cut-001.wav" id="2_7hd4y"]
+[ext_resource type="Script" uid="uid://cjs8d70ma56sw" path="res://scenes/choppingArea.gd" id="2_nryjd"]
 [ext_resource type="AudioStream" uid="uid://dvv0mt5rdavm2" path="res://audio/sfx/cut-002.wav" id="3_mv7c3"]
 [ext_resource type="AudioStream" uid="uid://deni2yba2v7vy" path="res://audio/sfx/cut-003.wav" id="4_45auw"]
 [ext_resource type="AudioStream" uid="uid://b3i2wne7h3jmj" path="res://audio/sfx/shwing-001.wav" id="5_j2lhl"]
@@ -34,9 +36,17 @@ size = Vector2(1.0114444, 0.3917923)
 [node name="Node2D" type="Node2D" unique_id=1352010802]
 script = ExtResource("1_xhhnb")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=79635887]
+[node name="CuttingBoardExitArea" type="Area2D" parent="." unique_id=1508558130]
+script = ExtResource("2_5ownp")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=838612427]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CuttingBoardExitArea" unique_id=1137769281]
+position = Vector2(591, 598)
+shape = SubResource("RectangleShape2D_ii7jg")
+
+[node name="CuttingBoardEnterArea" type="Area2D" parent="." unique_id=79635887]
+script = ExtResource("2_nryjd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CuttingBoardEnterArea" unique_id=838612427]
 position = Vector2(591, 598)
 shape = SubResource("RectangleShape2D_ii7jg")
 

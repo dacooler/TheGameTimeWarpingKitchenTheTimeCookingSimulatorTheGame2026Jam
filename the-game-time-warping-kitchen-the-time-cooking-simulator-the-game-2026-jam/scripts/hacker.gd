@@ -7,10 +7,17 @@ var typed = ""
 @onready var rich_text_label: RichTextLabel = $RichTextLabel
 @onready var basket: Node = $Basket
 
+var chopping: Array[Node2D] = []
+
 var actions = [
 	"cutcutcutcut",
 	"slicesliceslice"
 ]
+
+const cut_result = {
+	Globals.Produce.ONION : Globals.Produce.CHOPPED_ONION,
+	Globals.Produce.TOMATO : Globals.Produce.CHOPPED_TOMATO
+}
 
 @onready var cut_player: AudioStreamPlayer2D = $CutPlayer
 @onready var done_player: AudioStreamPlayer2D = $DonePlayer
@@ -18,6 +25,14 @@ var actions = [
 
 
 var selected_action = ""
+
+func start_cutting(body: Node2D):
+	chopping.append(body)
+	_new_thing()
+	
+func stop_cutting(body: Node2D):
+	chopping.erase(body)
+	typed = ""
 
 func _ready():
 	var peer = ENetMultiplayerPeer.new()
@@ -61,10 +76,10 @@ func _check_still_valid():
 	return selected_action.begins_with(typed)
 
 func _good_cut():
-	basket.add_produce.rpc(Globals.Produce.ONION)
 	_new_thing()
 	done_player.play()
-	rich_text_label.add_text("\n +1 Onion")
+	var chopped = chopping.pop_back()
+	chopped.set_type(cut_result[chopped.type])
 
 func _send_cut():
 	if (selected_action == typed):
