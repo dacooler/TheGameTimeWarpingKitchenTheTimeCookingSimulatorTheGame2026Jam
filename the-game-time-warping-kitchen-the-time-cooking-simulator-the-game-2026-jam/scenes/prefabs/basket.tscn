@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://dgugmtsxvgb82"]
+
+[ext_resource type="Script" uid="uid://hp2qcgk1m5o6" path="res://scripts/client_basket.gd" id="1_0xmcu"]
+[ext_resource type="Texture2D" uid="uid://bij67x204oduj" path="res://images/basket.png" id="2_cp4a1"]
+[ext_resource type="Script" uid="uid://e7bx0g1uteai" path="res://scripts/basket_content_area.gd" id="3_tqdpv"]
+[ext_resource type="Script" uid="uid://r1eyrxiqdo05" path="res://scripts/basket_leave_area.gd" id="4_jstp7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6vm1l"]
+size = Vector2(16, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ec42o"]
+size = Vector2(12, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qx6nb"]
+size = Vector2(263, 12)
+
+[sub_resource type="QuadMesh" id="QuadMesh_6vm1l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vo2pc"]
+size = Vector2(258, 41.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0aku4"]
+size = Vector2(301, 141)
+
+[node name="Basket" type="Node2D" unique_id=626660133]
+script = ExtResource("1_0xmcu")
+
+[node name="Basket" type="StaticBody2D" parent="." unique_id=484394956]
+
+[node name="left_wall" type="CollisionShape2D" parent="Basket" unique_id=1972678306]
+position = Vector2(-132, 76)
+shape = SubResource("RectangleShape2D_6vm1l")
+
+[node name="right-wall" type="CollisionShape2D" parent="Basket" unique_id=978291451]
+position = Vector2(137, 73)
+shape = SubResource("RectangleShape2D_ec42o")
+
+[node name="bottomWall" type="CollisionShape2D" parent="Basket" unique_id=1322202915]
+position = Vector2(0.5, 103)
+shape = SubResource("RectangleShape2D_qx6nb")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Basket" unique_id=1085697785]
+position = Vector2(2, 6)
+scale = Vector2(-440.2378, -273.9048)
+mesh = SubResource("QuadMesh_6vm1l")
+texture = ExtResource("2_cp4a1")
+
+[node name="BasketContentArea" type="Area2D" parent="." unique_id=1452437827]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_tqdpv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BasketContentArea" unique_id=1636467660]
+position = Vector2(1, 78.75)
+shape = SubResource("RectangleShape2D_vo2pc")
+
+[node name="BasketLeaveArea" type="Area2D" parent="." unique_id=241943583]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("4_jstp7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BasketLeaveArea" unique_id=293049809]
+position = Vector2(3.5, 48.5)
+shape = SubResource("RectangleShape2D_0aku4")

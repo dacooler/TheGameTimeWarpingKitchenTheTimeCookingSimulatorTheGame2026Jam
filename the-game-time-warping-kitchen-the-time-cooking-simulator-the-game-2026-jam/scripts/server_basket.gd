@@ -1,6 +1,6 @@
-extends Node2D
+extends Node
 
-var produces = {
+var produces: Dictionary[Globals.Produce, int] = {
 	Globals.Produce.ONION: 0,
 	Globals.Produce.TOMATO: 0,
 }
@@ -20,8 +20,14 @@ func _process(delta: float) -> void:
 @rpc("any_peer")
 func add_produce(produce: Globals.Produce):
 	produces[produce] += 1
+	get_content(produces)
 
 @rpc("any_peer")
 func remove_produce(produce: Globals.Produce):
 	if produces[produce] > 0:
 		produces[produce] -= 1
+		get_content(produces)
+
+@rpc("any_peer")
+func get_content(produces: Dictionary[Globals.Produce, int]):
+	pass

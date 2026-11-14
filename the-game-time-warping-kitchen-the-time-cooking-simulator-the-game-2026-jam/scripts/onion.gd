@@ -1,6 +1,7 @@
 extends RigidBody2D
 
 var is_draged := false
+var is_in_basket := false
 
 func _input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:

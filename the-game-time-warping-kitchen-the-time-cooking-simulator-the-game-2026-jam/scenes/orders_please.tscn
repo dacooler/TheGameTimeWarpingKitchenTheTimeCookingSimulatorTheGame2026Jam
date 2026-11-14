@@ -2,17 +2,10 @@
 
 [ext_resource type="Script" uid="uid://d6aq35oepa7d" path="res://scripts/orders_please.gd" id="1_gppf8"]
 [ext_resource type="Texture2D" uid="uid://d2xt1jemxgi7d" path="res://images/orders_please.jpg" id="2_lk0oa"]
-[ext_resource type="Script" uid="uid://bie65yij8sin2" path="res://scripts/onion.gd" id="3_4edkc"]
-[ext_resource type="Texture2D" uid="uid://ddsxfbum3h6lg" path="res://images/onion.jpg" id="3_ap3uk"]
+[ext_resource type="PackedScene" uid="uid://7xo8mbumihps" path="res://scenes/prefabs/onion.tscn" id="3_4edkc"]
+[ext_resource type="PackedScene" uid="uid://dgugmtsxvgb82" path="res://scenes/prefabs/basket.tscn" id="4_4edkc"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_6vm1l"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4edkc"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_6vm1l"]
-radius = 34.0
-
-[sub_resource type="QuadMesh" id="QuadMesh_ec42o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6vm1l"]
 size = Vector2(1174, 140)
@@ -34,22 +27,8 @@ scale = Vector2(1204.6249, -799.875)
 mesh = SubResource("QuadMesh_6vm1l")
 texture = ExtResource("2_lk0oa")
 
-[node name="Onion" type="RigidBody2D" parent="." unique_id=523559627]
+[node name="Onion" parent="." unique_id=814880662 instance=ExtResource("3_4edkc")]
 position = Vector2(568, 0)
-input_pickable = true
-physics_material_override = SubResource("PhysicsMaterial_4edkc")
-linear_damp = 1.0
-script = ExtResource("3_4edkc")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Onion" unique_id=1127952385]
-position = Vector2(0.4999962, -3.8146973e-06)
-shape = SubResource("CircleShape2D_6vm1l")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Onion" unique_id=1632306740]
-position = Vector2(-0.5000038, 0.99999666)
-scale = Vector2(74.99999, 71.99999)
-mesh = SubResource("QuadMesh_ec42o")
-texture = ExtResource("3_ap3uk")
 
 [node name="Floor2" type="StaticBody2D" parent="." unique_id=2069182563]
 position = Vector2(-8, 172)
@@ -102,3 +81,6 @@ visible = false
 position = Vector2(572.99994, 693.99994)
 scale = Vector2(1233.9999, 178.5)
 mesh = SubResource("QuadMesh_qx6nb")
+
+[node name="Basket" parent="." unique_id=626660133 instance=ExtResource("4_4edkc")]
+position = Vector2(160, 545)

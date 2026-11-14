@@ -1,13 +1,12 @@
 [gd_scene format=3 uid="uid://02onwc8m3isq"]
 
-[ext_resource type="Script" uid="uid://uotrg5imcmb8" path="res://scripts/server.gd" id="1_h8t3n"]
-[ext_resource type="Script" uid="uid://do3gqnvg0dsin" path="res://scripts/produce_debug.gd" id="2_imety"]
+[ext_resource type="Script" uid="uid://do3gqnvg0dsin" path="res://scripts/produce_debug.gd" id="1_m3u1i"]
+[ext_resource type="Script" uid="uid://cgcnvkhdf0sk5" path="res://scripts/server_basket.gd" id="2_ja7sr"]
 
 [node name="Node2D" type="Node2D" unique_id=854352001]
-script = ExtResource("1_h8t3n")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=588721190]
-script = ExtResource("2_imety")
+script = ExtResource("1_m3u1i")
 
 [node name="Label" type="Label" parent="Node2D" unique_id=279355984]
 offset_left = 154.0
@@ -26,3 +25,6 @@ offset_left = 239.0
 offset_top = 186.0
 offset_right = 336.0
 offset_bottom = 273.0
+
+[node name="Basket" type="Node" parent="." unique_id=1018158640]
+script = ExtResource("2_ja7sr")

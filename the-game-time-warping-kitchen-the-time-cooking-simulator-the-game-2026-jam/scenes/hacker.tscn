@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://2v24t3ukr5mt" path="res://audio/sfx/shwing-002.wav" id="6_jcnlv"]
 [ext_resource type="AudioStream" uid="uid://b64bt8nj5wowa" path="res://audio/sfx/shwing-003.wav" id="7_pvidj"]
 [ext_resource type="Texture2D" uid="uid://b5rcftq5usjc3" path="res://images/cuttingboard.jpg" id="8_jcnlv"]
+[ext_resource type="PackedScene" uid="uid://dgugmtsxvgb82" path="res://scenes/prefabs/basket.tscn" id="9_pvidj"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ii7jg"]
 streams_count = 3
@@ -47,3 +48,5 @@ rotation = -3.1415927
 scale = Vector2(1144.8972, 647.97424)
 mesh = SubResource("QuadMesh_j2lhl")
 texture = ExtResource("8_jcnlv")
+
+[node name="Basket" parent="." unique_id=1565680274 instance=ExtResource("9_pvidj")]

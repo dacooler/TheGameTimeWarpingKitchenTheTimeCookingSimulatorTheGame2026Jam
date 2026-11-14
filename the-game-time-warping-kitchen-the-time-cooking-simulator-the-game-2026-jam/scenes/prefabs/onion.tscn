@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://7xo8mbumihps"]
+
+[ext_resource type="Script" uid="uid://bie65yij8sin2" path="res://scripts/onion.gd" id="1_0aku4"]
+[ext_resource type="Texture2D" uid="uid://ddsxfbum3h6lg" path="res://images/onion.jpg" id="2_2scbw"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4edkc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6vm1l"]
+radius = 34.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_ec42o"]
+
+[node name="Onion" type="RigidBody2D" unique_id=814880662]
+collision_layer = 3
+input_pickable = true
+physics_material_override = SubResource("PhysicsMaterial_4edkc")
+linear_damp = 1.0
+script = ExtResource("1_0aku4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1630377589]
+position = Vector2(0.4999962, -3.8146973e-06)
+shape = SubResource("CircleShape2D_6vm1l")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1648922716]
+position = Vector2(-0.5000038, 0.99999666)
+scale = Vector2(74.99999, 71.99999)
+mesh = SubResource("QuadMesh_ec42o")
+texture = ExtResource("2_2scbw")

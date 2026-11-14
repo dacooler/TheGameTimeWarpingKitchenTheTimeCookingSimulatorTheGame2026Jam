@@ -5,6 +5,7 @@ const PORT = 6767
 
 var typed = ""
 @onready var rich_text_label: RichTextLabel = $RichTextLabel
+@onready var basket: Node = $Basket
 
 var actions = [
 	"cutcutcutcut",
@@ -59,7 +60,7 @@ func _check_still_valid():
 	return selected_action.begins_with(typed)
 
 func _good_cut():
-	add_produce.rpc(Globals.Produce.ONION)
+	basket.add_produce.rpc(Globals.Produce.ONION)
 	_new_thing()
 	done_player.play()
 	rich_text_label.add_text("\n +1 Onion")
@@ -83,12 +84,3 @@ func _type_cut(letter: String):
 	else:
 		cut_player.play()
 	_show_progress()
-
-
-@rpc("any_peer")
-func send_hello_world_to_server(hello: String):
-	pass
-
-@rpc("any_peer")
-func add_produce(produce: Globals.Produce):
-	pass
