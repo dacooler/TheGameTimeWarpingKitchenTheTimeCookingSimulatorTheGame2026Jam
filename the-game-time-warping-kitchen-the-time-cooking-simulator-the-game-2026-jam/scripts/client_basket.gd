@@ -18,13 +18,13 @@ func _ready():
 	request_get_content.rpc()
 
 func add_produce_2(produce: Node2D):
-	produce_in_basket[Globals.Produce.ONION].append(produce)
-	add_produce.rpc(Globals.Produce.ONION)
+	produce_in_basket[produce.type].append(produce)
+	add_produce.rpc(produce.type)
 
 func remove_produce_2(produce: Node2D):
-	var index := produce_in_basket[Globals.Produce.ONION].find(produce)
-	produce_in_basket[Globals.Produce.ONION].remove_at(index)
-	remove_produce.rpc(Globals.Produce.ONION)
+	var index := produce_in_basket[produce.type].find(produce)
+	produce_in_basket[produce.type].remove_at(index)
+	remove_produce.rpc(produce.type)
 
 @rpc("any_peer")
 func add_produce(_produce: Globals.Produce):
@@ -51,6 +51,7 @@ func get_content(incomming_produces: Dictionary[Globals.Produce, int]):
 func _create_produce(produce: Globals.Produce, amount: int):
 	for _i in range(amount):
 		var onion := ONION.instantiate()
+		onion.set_type(produce)
 		add_sibling(onion)
 		produce_in_basket[produce].append(onion)
 
