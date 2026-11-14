@@ -16,8 +16,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	
-	
 	if (cooking.is_empty()):
 		return
 	cookedPercent += delta * cookingSpeed
@@ -29,12 +27,20 @@ func _process(delta: float) -> void:
 	else:
 		cooking = {Globals.Produce.ASH : 1}
 	
-func _stop_cooking():
+func _remove_cooking_produce(produce: Globals.Produce):
 	cookedPercent = 0
-	for produce in cooking:
-		basket.add_produce(produce)
+	var amount = cooking.get(produce)
+	if(amount == 1):
+		cooking.erase(produce)
+	else:
+		cooking.set(produce, amount - 1)
+	
 	
 func _add_cooking_produce(produce: Globals.Produce):
 	basket.remove_produce(produce)
-	cooking.get_or_add(produce, 1)
+	if cooking.has(produce):
+		var amount = cooking.get(produce)
+		cooking.set(produce, amount + 1)
+	else:
+		cooking.set(produce, 1)
 	cookedPercent = 0
