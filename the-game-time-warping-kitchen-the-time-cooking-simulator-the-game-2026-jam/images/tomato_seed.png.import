@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://jteskuesaafy"
+=======
+uid="uid://dw3tq4wi4iw5f"
+>>>>>>> 1a037c6d9e6a9409c72beee832453d5736f20b7c
 path="res://.godot/imported/tomato_seed.png-217fbab1ef76cfbd84193612de1efb18.ctex"
 metadata={
 "vram_texture": false
