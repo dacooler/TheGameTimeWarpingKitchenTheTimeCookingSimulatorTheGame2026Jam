@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b6pncpmmw07dq"]
+
+[ext_resource type="Script" uid="uid://ydgvbhqad44u" path="res://scenes/steaka.gd" id="1_o5rkf"]
+[ext_resource type="Texture2D" uid="uid://b1waqfj3lmwvr" path="res://images/fryingpan.jpg" id="2_5pugn"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_o5rkf"]
+
+[node name="Node2D" type="Node2D" unique_id=82442031]
+script = ExtResource("1_o5rkf")
+cookingSpeed = 1.0
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=117857047]
+position = Vector2(576.12494, 323.625)
+scale = Vector2(1153.7499, -644.74994)
+mesh = SubResource("QuadMesh_o5rkf")
+texture = ExtResource("2_5pugn")
