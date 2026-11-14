@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cybkytvgiuri7"
-path="res://.godot/imported/sauce.jpg-a7836ea7d46cd8473b1556a07db35194.ctex"
+uid="uid://c3qbnqvlee3lf"
+path="res://.godot/imported/onion_seed.webp-0f1d3cb527de8c207158c78360a7e6df.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/sauce.jpg"
-dest_files=["res://.godot/imported/sauce.jpg-a7836ea7d46cd8473b1556a07db35194.ctex"]
+source_file="res://images/onion_seed.webp"
+dest_files=["res://.godot/imported/onion_seed.webp-0f1d3cb527de8c207158c78360a7e6df.ctex"]
 
 [params]
 

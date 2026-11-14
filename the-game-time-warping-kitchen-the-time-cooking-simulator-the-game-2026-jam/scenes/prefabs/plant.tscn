@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://cl1dhqvwbcgqs"]
+
+[ext_resource type="Script" uid="uid://b2fal6urtbb7u" path="res://scenes/prefabs/plant.gd" id="1_hiuae"]
+[ext_resource type="Texture2D" uid="uid://m58dwpncaya" path="res://images/pot.png" id="1_t1rim"]
+[ext_resource type="Texture2D" uid="uid://bn7en5xkegemx" path="res://images/seedling.webp" id="2_0aldq"]
+[ext_resource type="Script" uid="uid://c6noytmg7n8bm" path="res://scenes/prefabs/plantbox.gd" id="3_hiuae"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m1b0l"]
+size = Vector2(113, 102)
+
+[sub_resource type="QuadMesh" id="QuadMesh_ii7jg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ii7jg"]
+size = Vector2(127, 108)
+
+[sub_resource type="QuadMesh" id="QuadMesh_m1b0l"]
+
+[node name="Plant" type="Node2D" unique_id=294143976]
+script = ExtResource("1_hiuae")
+
+[node name="Plantbox" type="Area2D" parent="." unique_id=50356272]
+collision_layer = 255
+collision_mask = 255
+script = ExtResource("3_hiuae")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plantbox" unique_id=1073065816]
+position = Vector2(590, 473)
+shape = SubResource("RectangleShape2D_m1b0l")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=716598983]
+
+[node name="Pot" type="MeshInstance2D" parent="StaticBody2D" unique_id=1096442917]
+position = Vector2(588, 569)
+scale = Vector2(165.5, -154.50002)
+mesh = SubResource("QuadMesh_ii7jg")
+texture = ExtResource("1_t1rim")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1568051474]
+position = Vector2(585, 587)
+shape = SubResource("RectangleShape2D_ii7jg")
+
+[node name="Sprout" type="MeshInstance2D" parent="." unique_id=611743090]
+visible = false
+position = Vector2(588, 499.99997)
+scale = Vector2(103.5, -87.5)
+mesh = SubResource("QuadMesh_m1b0l")
+texture = ExtResource("2_0aldq")
