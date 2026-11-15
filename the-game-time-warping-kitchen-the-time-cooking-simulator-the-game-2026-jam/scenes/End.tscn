@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ds16w1w6t03cl"]
+
+[ext_resource type="Script" uid="uid://bau8d6iaxqs08" path="res://scenes/end.gd" id="1_805va"]
+[ext_resource type="AudioStream" uid="uid://cvvnrqe2tue51" path="res://audio/ost/Frutiger_Onion.mp3" id="2_uehg5"]
+
+[node name="End" type="Node2D" unique_id=1768889768]
+script = ExtResource("1_805va")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1252156457]
+stream = ExtResource("2_uehg5")
+autoplay = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=417525719]
+offset_right = 1043.0
+offset_bottom = 410.0
+theme_override_font_sizes/normal_font_size = 40
+text = "Your score is: "
