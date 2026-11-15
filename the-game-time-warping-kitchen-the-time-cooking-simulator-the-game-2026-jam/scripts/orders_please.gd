@@ -22,8 +22,8 @@ func _on_timer_timeout():
 		minutes -= 1
 	if minutes == -1:
 		print("doneso")
-	if (minutes == 1 && seconds == 22):
 		timer.stop()
+	if (minutes == 1 && seconds == 22):
 		calm_music_player.stop()
 		stress_music_player.play()
 	print( minutes, " : ", str(seconds).pad_zeros(2) )

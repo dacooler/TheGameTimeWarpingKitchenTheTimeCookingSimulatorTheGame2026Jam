@@ -8,7 +8,7 @@
 
 [node name="Node2D" type="Node2D" unique_id=2095492187]
 script = ExtResource("1_2ec4p")
-foodTime = 2.0
+foodTime = 0.8
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1749394697]
 z_index = -1
