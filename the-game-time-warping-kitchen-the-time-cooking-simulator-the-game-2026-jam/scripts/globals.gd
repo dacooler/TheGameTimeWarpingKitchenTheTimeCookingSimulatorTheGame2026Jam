@@ -33,7 +33,7 @@ static var produceImages = {
 	Produce.TOMATO_SEED: TOMATO_SEED
 }
 
-const IP_ADDRESS := "10.57.159.210"
+static var IP_ADDRESS := "127.0.0.1"
 const PORT := 6767
 const MAX_CLIENTS := 7
 

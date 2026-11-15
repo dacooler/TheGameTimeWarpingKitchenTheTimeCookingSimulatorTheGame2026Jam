@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dik552cu08fjw"]
 
 [ext_resource type="Script" uid="uid://p3wjpb2nli2m" path="res://scripts/button.gd" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://br53nb22gt1eh" path="res://scripts/ip_input.gd" id="2_0wfyh"]
 
 [node name="Node2D" type="Node2D" unique_id=1670611415]
 
@@ -59,3 +60,10 @@ offset_bottom = 551.0
 text = "STEAKA"
 script = ExtResource("1_o5qli")
 scene = "res://scenes/steaka.tscn"
+
+[node name="IPInput" type="TextEdit" parent="." unique_id=22659237]
+offset_left = 420.0
+offset_top = 99.0
+offset_right = 610.0
+offset_bottom = 189.0
+script = ExtResource("2_0wfyh")
