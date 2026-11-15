@@ -9,9 +9,9 @@
 [ext_resource type="AudioStream" uid="uid://b3i2wne7h3jmj" path="res://audio/sfx/shwing-001.wav" id="5_j2lhl"]
 [ext_resource type="AudioStream" uid="uid://2v24t3ukr5mt" path="res://audio/sfx/shwing-002.wav" id="6_jcnlv"]
 [ext_resource type="AudioStream" uid="uid://b64bt8nj5wowa" path="res://audio/sfx/shwing-003.wav" id="7_pvidj"]
-[ext_resource type="Texture2D" uid="uid://b5rcftq5usjc3" path="res://images/cuttingboard.jpg" id="8_jcnlv"]
 [ext_resource type="AudioStream" uid="uid://csmwxg2mc310x" path="res://audio/sfx/error.wav" id="8_qvh4k"]
 [ext_resource type="PackedScene" uid="uid://dgugmtsxvgb82" path="res://scenes/prefabs/basket.tscn" id="9_pvidj"]
+[ext_resource type="Texture2D" uid="uid://cm0gl3wrtmdt5" path="res://images/skarbrada.png" id="12_5ownp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ii7jg"]
 size = Vector2(1091, 101)
@@ -77,11 +77,11 @@ position = Vector2(183, 382)
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="CuttingBoard" unique_id=170348588]
 z_index = -1
-position = Vector2(579.00006, 578.99994)
+position = Vector2(576, 481.00006)
 rotation = 3.1415925
 scale = Vector2(1144.8972, 647.97424)
 mesh = SubResource("QuadMesh_j2lhl")
-texture = ExtResource("8_jcnlv")
+texture = ExtResource("12_5ownp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CuttingBoard" unique_id=2106542180]
 position = Vector2(572.00006, 774.00006)

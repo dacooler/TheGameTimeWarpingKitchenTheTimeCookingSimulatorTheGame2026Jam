@@ -3,16 +3,15 @@
 [ext_resource type="Script" uid="uid://d6aq35oepa7d" path="res://scripts/orders_please.gd" id="1_gppf8"]
 [ext_resource type="Texture2D" uid="uid://d2xt1jemxgi7d" path="res://images/orders_please.jpg" id="2_lk0oa"]
 [ext_resource type="PackedScene" uid="uid://dgugmtsxvgb82" path="res://scenes/prefabs/basket.tscn" id="4_4edkc"]
+[ext_resource type="Texture2D" uid="uid://cs43ihqwloa3u" path="res://images/hungry_boi.png" id="4_k7077"]
 [ext_resource type="Script" uid="uid://pmupw4c23yl4" path="res://scripts/plate.gd" id="4_kjnmp"]
 [ext_resource type="AudioStream" uid="uid://rvo4y4u2jtxo" path="res://audio/sfx/talking1.wav" id="5_pvhfg"]
-[ext_resource type="Texture2D" uid="uid://ckjdmwruigm0c" path="res://images/plate.png" id="5_topsq"]
 [ext_resource type="AudioStream" uid="uid://qnj8uw2cwwgh" path="res://audio/sfx/talking2.wav" id="6_pm7mg"]
 [ext_resource type="Script" uid="uid://ccpxyh4h0jlrd" path="res://scripts/coins.gd" id="6_topsq"]
 [ext_resource type="AudioStream" uid="uid://b6n66ira8fpn6" path="res://audio/sfx/talking3.wav" id="7_knx7f"]
 [ext_resource type="AudioStream" uid="uid://crqmn3l6bapry" path="res://audio/ost/Ristorante_Al_Dente.mp3" id="7_nk7cm"]
 [ext_resource type="AudioStream" uid="uid://455lsu520qwc" path="res://audio/ost/Layers_of_Onion.wav" id="8_fytp3"]
 [ext_resource type="AudioStream" uid="uid://csmwxg2mc310x" path="res://audio/sfx/error.wav" id="8_knx7f"]
-[ext_resource type="Texture2D" uid="uid://0wijcbspm6wu" path="res://images/man.jpg" id="12_pm7mg"]
 [ext_resource type="Texture2D" uid="uid://bt2itbkyd4667" path="res://images/pasta_pompedoro.png" id="14_h4q0u"]
 [ext_resource type="Texture2D" uid="uid://0i01iqif5fhd" path="res://images/speech.webp" id="15_hn72g"]
 
@@ -40,8 +39,6 @@ size = Vector2(168, 898)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4edkc"]
 size = Vector2(262, 818)
 
-[sub_resource type="QuadMesh" id="QuadMesh_ii7jg"]
-
 [sub_resource type="QuadMesh" id="QuadMesh_m1b0l"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_t7g5p"]
@@ -67,11 +64,11 @@ position = Vector2(-10.177246, 1.8226318)
 shape = SubResource("RectangleShape2D_ec42o")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Plate" unique_id=906905526]
-position = Vector2(2.822754, -16.177338)
+position = Vector2(-8.106232e-06, -64.00001)
 rotation = -3.1415927
-scale = Vector2(297.6454, 297.64526)
+scale = Vector2(297.6454, 483.58594)
 mesh = SubResource("QuadMesh_ec42o")
-texture = ExtResource("5_topsq")
+texture = ExtResource("4_k7077")
 
 [node name="Talking" type="AudioStreamPlayer2D" parent="Plate" unique_id=1180388828]
 position = Vector2(2.822754, -16.177338)
@@ -165,13 +162,6 @@ theme_override_font_sizes/normal_font_size = 50
 [node name="StressMusicPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1628933619]
 position = Vector2(688, 21)
 stream = ExtResource("8_fytp3")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=2143206158]
-z_index = -1
-position = Vector2(883, 282)
-scale = Vector2(232.75002, -610)
-mesh = SubResource("QuadMesh_ii7jg")
-texture = ExtResource("12_pm7mg")
 
 [node name="MeshInstance2D2" type="MeshInstance2D" parent="." unique_id=1777324310]
 position = Vector2(803, 53.000008)
