@@ -9,6 +9,7 @@ var cookedPercent = 0
 
 var rawToCooked = {
 	{Globals.Produce.CHOPPED_TOMATO: 1, Globals.Produce.CHOPPED_ONION: 1}: {Globals.Produce.SAUCE : 1},
+	{Globals.Produce.SAUCE: 1, Globals.Produce.PASTA: 1 } : {Globals.Produce.TOMATO_PASTA : 1}
 }
 
 # Called when the node enters the scene tree for the first time.

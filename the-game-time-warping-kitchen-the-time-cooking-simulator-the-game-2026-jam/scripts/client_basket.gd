@@ -10,7 +10,9 @@ var produce_in_basket: Dictionary[Globals.Produce, Array] = {
 	Globals.Produce.SAUCE: [],
 	Globals.Produce.ASH: [],
 	Globals.Produce.ONION_SEED: [],
-	Globals.Produce.TOMATO_SEED: []
+	Globals.Produce.TOMATO_SEED: [],
+	Globals.Produce.PASTA: [],
+	Globals.Produce.TOMATO_PASTA: []
 }
 
 func _ready():
