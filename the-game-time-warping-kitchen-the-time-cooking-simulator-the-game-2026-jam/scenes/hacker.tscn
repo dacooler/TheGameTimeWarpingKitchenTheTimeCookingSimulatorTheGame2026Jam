@@ -93,7 +93,7 @@ scale = Vector2(1144.8972, 647.97424)
 shape = SubResource("RectangleShape2D_m1b0l")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1786897054]
-position = Vector2(771.125, 96.000015)
-scale = Vector2(824.24994, -453.25)
+position = Vector2(806, 96)
+scale = Vector2(538.24994, -453.25)
 mesh = SubResource("QuadMesh_ii7jg")
 texture = ExtResource("13_shx05")

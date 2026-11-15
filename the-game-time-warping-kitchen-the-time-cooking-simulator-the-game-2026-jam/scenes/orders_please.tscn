@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://d6aq35oepa7d" path="res://scripts/orders_please.gd" id="1_gppf8"]
 [ext_resource type="Texture2D" uid="uid://d2xt1jemxgi7d" path="res://images/orders_please.jpg" id="2_lk0oa"]
 [ext_resource type="PackedScene" uid="uid://dgugmtsxvgb82" path="res://scenes/prefabs/basket.tscn" id="4_4edkc"]
-[ext_resource type="Texture2D" uid="uid://cs43ihqwloa3u" path="res://images/hungry_boi.png" id="4_k7077"]
+[ext_resource type="Texture2D" uid="uid://cnf2hdyroem6h" path="res://images/frensh_guy.png" id="4_k7077"]
 [ext_resource type="Script" uid="uid://pmupw4c23yl4" path="res://scripts/plate.gd" id="4_kjnmp"]
 [ext_resource type="AudioStream" uid="uid://rvo4y4u2jtxo" path="res://audio/sfx/talking1.wav" id="5_pvhfg"]
 [ext_resource type="AudioStream" uid="uid://qnj8uw2cwwgh" path="res://audio/sfx/talking2.wav" id="6_pm7mg"]
@@ -18,7 +18,7 @@
 [sub_resource type="QuadMesh" id="QuadMesh_6vm1l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ec42o"]
-size = Vector2(158, 124)
+size = Vector2(229, 308)
 
 [sub_resource type="QuadMesh" id="QuadMesh_ec42o"]
 
@@ -60,13 +60,13 @@ collision_mask = 2
 script = ExtResource("4_kjnmp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plate" unique_id=1514517663]
-position = Vector2(-10.177246, 1.8226318)
+position = Vector2(-12.5, -59)
 shape = SubResource("RectangleShape2D_ec42o")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Plate" unique_id=906905526]
-position = Vector2(-8.106232e-06, -64.00001)
+position = Vector2(-12, -34)
 rotation = -3.1415927
-scale = Vector2(297.6454, 483.58594)
+scale = Vector2(465.64536, 483.58594)
 mesh = SubResource("QuadMesh_ec42o")
 texture = ExtResource("4_k7077")
 
@@ -164,13 +164,13 @@ position = Vector2(688, 21)
 stream = ExtResource("8_fytp3")
 
 [node name="MeshInstance2D2" type="MeshInstance2D" parent="." unique_id=1777324310]
-position = Vector2(803, 53.000008)
+position = Vector2(955, 115)
 scale = Vector2(241.5, -159.5)
 mesh = SubResource("QuadMesh_m1b0l")
 texture = ExtResource("14_h4q0u")
 
 [node name="MeshInstance2D3" type="MeshInstance2D" parent="." unique_id=345312792]
-position = Vector2(809, 62)
+position = Vector2(956, 139)
 scale = Vector2(-286.99997, -147.5)
 mesh = SubResource("QuadMesh_t7g5p")
 texture = ExtResource("15_hn72g")
