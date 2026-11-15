@@ -43,6 +43,7 @@ func _process(delta: float) -> void:
 		dust_particle.emitting = false
 		cook_sound.playing = false
 		progress_bar.visible = false
+		cookedPercent = 0
 		return
 
 	smoke_particle.emitting = true
@@ -85,14 +86,12 @@ func _add_the_shit_2(recipie):
 			produces[produce].append(new)
 
 func _remove_cooking_produce(produce: Node2D):
-	cookedPercent = 0
 	var produce_list = produces.get(produce.type)
 	if produce_list == null:
 		return
 
 	var index = produce_list.find(produce)
 	produce_list.remove_at(index)
-
 
 	if produce_list.is_empty():
 		produces.erase(produce.type)
@@ -103,5 +102,3 @@ func _add_cooking_produce(produce: Node2D):
 
 	var produce_list = produces.get(produce.type)
 	produce_list.append(produce)
-
-	cookedPercent = 0

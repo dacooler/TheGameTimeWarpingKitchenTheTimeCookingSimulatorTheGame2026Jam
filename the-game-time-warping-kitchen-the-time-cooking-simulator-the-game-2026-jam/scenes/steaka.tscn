@@ -104,6 +104,7 @@ hue_variation_max = 1.0
 
 [node name="cookSound" type="AudioStreamPlayer2D" parent="." unique_id=2123007163]
 stream = ExtResource("7_aodnl")
+volume_db = -10.478
 
 [node name="successSound" type="AudioStreamPlayer2D" parent="." unique_id=2141899724]
 stream = ExtResource("8_0x66p")
