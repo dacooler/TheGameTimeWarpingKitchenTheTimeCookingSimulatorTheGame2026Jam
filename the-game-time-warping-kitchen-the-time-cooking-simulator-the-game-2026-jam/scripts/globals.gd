@@ -1,5 +1,7 @@
 class_name Globals
 
+
+
 enum Produce {
 	ONION,
 	TOMATO,
@@ -43,3 +45,5 @@ const PORT := 6767
 const MAX_CLIENTS := 7
 
 static var coins := 0
+
+static var time := 5
