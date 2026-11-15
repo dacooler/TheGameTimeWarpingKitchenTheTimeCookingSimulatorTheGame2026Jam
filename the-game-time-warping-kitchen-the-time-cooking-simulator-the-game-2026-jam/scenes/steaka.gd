@@ -6,6 +6,8 @@ var produces: Dictionary[Globals.Produce, Array] = {}
 var cookedPercent = 0
 @export var cookingSpeed: float;
 @onready var basket: Node2D = $Basket
+@onready var smoke_particle: CPUParticles2D = $SmokeParticle
+@onready var dust_particle: CPUParticles2D = $DustParticle
 
 var rawToCooked = {
 	{Globals.Produce.CHOPPED_TOMATO: 1, Globals.Produce.CHOPPED_ONION: 1}: {Globals.Produce.SAUCE : 1},
@@ -32,7 +34,12 @@ func _process(delta: float) -> void:
 	var recipie = _get_recipie()
 
 	if (recipie.is_empty()):
+		smoke_particle.emitting = false
+		dust_particle.emitting = false
 		return
+
+	smoke_particle.emitting = true
+	dust_particle.emitting = true
 	cookedPercent += delta * cookingSpeed
 	if (cookedPercent < 100):
 		return

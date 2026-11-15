@@ -84,7 +84,7 @@ func _good_cut():
 		chopped.set_type(Globals.Produce.ASH)
 		return
 	chopped.set_type(cut_result[chopped.type])
-	
+
 
 func _send_cut():
 	if (selected_action == typed):

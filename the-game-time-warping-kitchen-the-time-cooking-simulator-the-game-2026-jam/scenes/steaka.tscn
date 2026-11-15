@@ -1,10 +1,16 @@
 [gd_scene format=3 uid="uid://b6pncpmmw07dq"]
 
 [ext_resource type="Script" uid="uid://ydgvbhqad44u" path="res://scenes/steaka.gd" id="1_o5rkf"]
-[ext_resource type="Texture2D" uid="uid://b1waqfj3lmwvr" path="res://images/fryingpan.jpg" id="2_5pugn"]
+[ext_resource type="Texture2D" uid="uid://cjxb57bd165l0" path="res://images/smoke_ripped_from_the_web.png" id="2_lbb8j"]
 [ext_resource type="PackedScene" uid="uid://dgugmtsxvgb82" path="res://scenes/prefabs/basket.tscn" id="3_e2was"]
+[ext_resource type="Texture2D" uid="uid://b1jx6npmo2p1" path="res://images/pan.png" id="4_lbb8j"]
 [ext_resource type="Script" uid="uid://qs65sjyb3w1" path="res://scripts/frypan_enter_area.gd" id="4_vf612"]
 [ext_resource type="Script" uid="uid://cfq6aj7fqxbx5" path="res://scripts/frypan_leave_area.gd" id="5_lbb8j"]
+
+[sub_resource type="Gradient" id="Gradient_6vm1l"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="Gradient" id="Gradient_ec42o"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_o5rkf"]
 
@@ -15,6 +21,29 @@ size = Vector2(541, 85)
 script = ExtResource("1_o5rkf")
 cookingSpeed = 30.0
 
+[node name="SmokeParticle" type="CPUParticles2D" parent="." unique_id=1872641472]
+position = Vector2(582, 406)
+emitting = false
+amount = 30
+texture = ExtResource("2_lbb8j")
+randomness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(250, 25)
+direction = Vector2(0, -1)
+spread = 25.01
+gravity = Vector2(0, 0)
+initial_velocity_max = 150.79
+angle_min = -720.0
+angle_max = 720.0
+scale_amount_min = 0.02
+scale_amount_max = 0.05
+color = Color(1, 1, 1, 0.078431375)
+color_ramp = SubResource("Gradient_6vm1l")
+color_initial_ramp = SubResource("Gradient_ec42o")
+hue_variation_min = 0.39
+hue_variation_max = 1.0
+
 [node name="Basket" parent="." unique_id=626660133 instance=ExtResource("3_e2was")]
 position = Vector2(102, 506)
 
@@ -22,10 +51,10 @@ position = Vector2(102, 506)
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="FryingPan" unique_id=117857047]
 z_index = -1
-position = Vector2(419.31253, 387.00006)
-scale = Vector2(975.37506, -252.00002)
+position = Vector2(697, 410.5)
+scale = Vector2(795.99994, -291)
 mesh = SubResource("QuadMesh_o5rkf")
-texture = ExtResource("2_5pugn")
+texture = ExtResource("4_lbb8j")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FryingPan" unique_id=2143143460]
 polygon = PackedVector2Array(309, 365, 374, 433, 792, 436, 857, 372, 796, 454, 366, 450)
@@ -47,3 +76,22 @@ script = ExtResource("5_lbb8j")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeaveArea" unique_id=1828790211]
 position = Vector2(583.5, 406.5)
 shape = SubResource("RectangleShape2D_ii7jg")
+
+[node name="DustParticle" type="CPUParticles2D" parent="." unique_id=1149239235]
+position = Vector2(584, 408)
+emitting = false
+amount = 52
+randomness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(250, 25)
+direction = Vector2(0, -1)
+spread = 25.01
+initial_velocity_min = 174.61
+initial_velocity_max = 376.98
+scale_amount_min = 2.0
+scale_amount_max = 8.0
+color = Color(0.3766248, 0.41840243, 0.46098286, 0.39607844)
+color_ramp = SubResource("Gradient_6vm1l")
+hue_variation_min = 0.39
+hue_variation_max = 1.0
