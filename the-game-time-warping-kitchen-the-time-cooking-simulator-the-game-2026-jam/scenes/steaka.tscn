@@ -22,7 +22,7 @@ size = Vector2(541, 85)
 
 [node name="Node2D" type="Node2D" unique_id=82442031]
 script = ExtResource("1_o5rkf")
-cookingSpeed = 30.0
+cookingSpeed = 10.0
 
 [node name="SmokeParticle" type="CPUParticles2D" parent="." unique_id=1872641472]
 position = Vector2(582, 406)
@@ -107,3 +107,9 @@ stream = ExtResource("8_0x66p")
 
 [node name="failSound" type="AudioStreamPlayer2D" parent="." unique_id=1025179134]
 stream = ExtResource("9_n7wp7")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=18297945]
+offset_left = 325.0
+offset_top = 461.0
+offset_right = 841.0
+offset_bottom = 488.0

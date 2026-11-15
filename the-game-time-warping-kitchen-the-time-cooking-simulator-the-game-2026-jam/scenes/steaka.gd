@@ -31,6 +31,7 @@ func _get_recipie() -> Dictionary[Globals.Produce, int]:
 	return recipie
 
 @onready var cook_sound: AudioStreamPlayer2D = $cookSound
+@onready var progress_bar: ProgressBar = $ProgressBar
 @onready var success_sound: AudioStreamPlayer2D = $successSound
 @onready var fail_sound: AudioStreamPlayer2D = $failSound
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -41,13 +42,16 @@ func _process(delta: float) -> void:
 		smoke_particle.emitting = false
 		dust_particle.emitting = false
 		cook_sound.playing = false
+		progress_bar.visible = false
 		return
 
 	smoke_particle.emitting = true
 	dust_particle.emitting = true
+	progress_bar.visible = true
 	if !cook_sound.playing:
 		cook_sound.play()
 	cookedPercent += delta * cookingSpeed
+	progress_bar.value = cookedPercent
 	if (cookedPercent < 100):
 		return
 	cookedPercent = 0
