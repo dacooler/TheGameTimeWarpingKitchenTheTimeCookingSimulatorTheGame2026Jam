@@ -2,20 +2,12 @@ extends Node2D
 
 const ONION = preload("uid://7xo8mbumihps")
 
-var produce_in_basket: Dictionary[Globals.Produce, Array] = {
-	Globals.Produce.ONION: [],
-	Globals.Produce.TOMATO: [],
-	Globals.Produce.CHOPPED_ONION: [],
-	Globals.Produce.CHOPPED_TOMATO: [],
-	Globals.Produce.SAUCE: [],
-	Globals.Produce.ASH: [],
-	Globals.Produce.ONION_SEED: [],
-	Globals.Produce.TOMATO_SEED: [],
-	Globals.Produce.PASTA: [],
-	Globals.Produce.TOMATO_PASTA: []
-}
+var produce_in_basket: Dictionary[Globals.Produce, Array] = {}
+
 
 func _ready():
+	for produce in Globals.Produce.values():
+		produce_in_basket.set(produce, [])
 	var peer = ENetMultiplayerPeer.new()
 	peer.create_client(Globals.IP_ADDRESS, Globals.PORT)
 	multiplayer.multiplayer_peer = peer

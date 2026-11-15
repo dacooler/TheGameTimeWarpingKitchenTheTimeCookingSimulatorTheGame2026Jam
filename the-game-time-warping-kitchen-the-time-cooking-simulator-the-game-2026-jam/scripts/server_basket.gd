@@ -1,19 +1,9 @@
 extends Node
-
-var produces: Dictionary[Globals.Produce, int] = {
-	Globals.Produce.ONION: 0,
-	Globals.Produce.TOMATO: 0,
-	Globals.Produce.CHOPPED_ONION: 0,
-	Globals.Produce.CHOPPED_TOMATO: 0,
-	Globals.Produce.SAUCE: 0,
-	Globals.Produce.ASH: 0,
-	Globals.Produce.ONION_SEED: 0,
-	Globals.Produce.TOMATO_SEED: 0,
-	Globals.Produce.PASTA: 0,
-	Globals.Produce.TOMATO_PASTA: 0
-}
+var produces: Dictionary[Globals.Produce, int] = {}
 
 func _ready():
+	for produce in Globals.Produce.values():
+		produces.set(produce, 0)
 	var peer = ENetMultiplayerPeer.new()
 	peer.create_server(Globals.PORT, Globals.MAX_CLIENTS)
 	multiplayer.multiplayer_peer = peer
