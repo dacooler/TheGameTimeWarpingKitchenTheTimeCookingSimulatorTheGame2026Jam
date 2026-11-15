@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://csmwxg2mc310x" path="res://audio/sfx/error.wav" id="8_qvh4k"]
 [ext_resource type="PackedScene" uid="uid://dgugmtsxvgb82" path="res://scenes/prefabs/basket.tscn" id="9_pvidj"]
 [ext_resource type="Texture2D" uid="uid://cm0gl3wrtmdt5" path="res://images/skarbrada.png" id="12_5ownp"]
+[ext_resource type="Texture2D" uid="uid://i3523854xrxx" path="res://images/sign_cutting_board.png" id="13_shx05"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ii7jg"]
 size = Vector2(1091, 101)
@@ -32,6 +33,8 @@ stream_2/stream = ExtResource("7_pvidj")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m1b0l"]
 size = Vector2(1.0114444, 0.3917923)
+
+[sub_resource type="QuadMesh" id="QuadMesh_ii7jg"]
 
 [node name="Node2D" type="Node2D" unique_id=1352010802]
 script = ExtResource("1_xhhnb")
@@ -88,3 +91,9 @@ position = Vector2(572.00006, 774.00006)
 rotation = 3.1415925
 scale = Vector2(1144.8972, 647.97424)
 shape = SubResource("RectangleShape2D_m1b0l")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1786897054]
+position = Vector2(771.125, 96.000015)
+scale = Vector2(824.24994, -453.25)
+mesh = SubResource("QuadMesh_ii7jg")
+texture = ExtResource("13_shx05")

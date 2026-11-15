@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://mdg3hcbhnjuh" path="res://audio/sfx/Frying.wav" id="7_aodnl"]
 [ext_resource type="AudioStream" uid="uid://ctvepdynuih7b" path="res://audio/sfx/nice_whistle.wav" id="8_0x66p"]
 [ext_resource type="AudioStream" uid="uid://csmwxg2mc310x" path="res://audio/sfx/error.wav" id="9_n7wp7"]
+[ext_resource type="Texture2D" uid="uid://c58w22nkjiwmb" path="res://images/sign_frying_pan.png" id="10_n7wp7"]
 
 [sub_resource type="Gradient" id="Gradient_6vm1l"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
@@ -19,6 +20,8 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ii7jg"]
 size = Vector2(541, 85)
+
+[sub_resource type="QuadMesh" id="QuadMesh_ii7jg"]
 
 [node name="Node2D" type="Node2D" unique_id=82442031]
 script = ExtResource("1_o5rkf")
@@ -113,3 +116,9 @@ offset_left = 325.0
 offset_top = 461.0
 offset_right = 841.0
 offset_bottom = 488.0
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1942099686]
+position = Vector2(824, 104)
+scale = Vector2(653.5, -491.5)
+mesh = SubResource("QuadMesh_ii7jg")
+texture = ExtResource("10_n7wp7")

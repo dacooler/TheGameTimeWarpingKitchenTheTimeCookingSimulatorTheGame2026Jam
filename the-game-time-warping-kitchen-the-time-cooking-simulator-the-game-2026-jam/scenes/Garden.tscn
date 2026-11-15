@@ -6,8 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://dgugmtsxvgb82" path="res://scenes/prefabs/basket.tscn" id="3_fatj7"]
 [ext_resource type="Texture2D" uid="uid://dc5amjxtdnmty" path="res://images/shoehorn.png" id="5_sdi01"]
 [ext_resource type="Script" uid="uid://ce7kmvp16f3n2" path="res://scenes/shoehorn.gd" id="6_sdi01"]
+[ext_resource type="Texture2D" uid="uid://dnfy7tevc57v5" path="res://images/sign_garden.png" id="7_w2fwq"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_1jxca"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_ii7jg"]
 
 [node name="Node2D" type="Node2D" unique_id=192461280]
 script = ExtResource("1_8nvtl")
@@ -38,3 +41,9 @@ position = Vector2(103, -21)
 
 [node name="Plant3" parent="." unique_id=1022074363 instance=ExtResource("2_a07rb")]
 position = Vector2(358, -34)
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="." unique_id=2107145939]
+position = Vector2(752, 77)
+scale = Vector2(573.36456, -359.17004)
+mesh = SubResource("QuadMesh_ii7jg")
+texture = ExtResource("7_w2fwq")
