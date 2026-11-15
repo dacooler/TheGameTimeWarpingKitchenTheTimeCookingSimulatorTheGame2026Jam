@@ -9,6 +9,15 @@ var seed_to_produce = {
 	Globals.Produce.TOMATO_SEED: Globals.Produce.TOMATO
 }
 
+const ONION_SEEDLING = preload("uid://bq4oc4u6shomw")
+const TOMATO_SEEDLING = preload("uid://wkf5owt4n3ej")
+
+
+var seed_images = {
+	Globals.Produce.TOMATO_SEED : TOMATO_SEEDLING,
+	Globals.Produce.ONION_SEED : ONION_SEEDLING
+}
+
 var planted = false
 
 # Called when the node enters the scene tree for the first time.
@@ -17,6 +26,7 @@ func _ready() -> void:
 
 func plant(seed: Globals.Produce):
 	sprout.visible = true
+	sprout.texture = seed_images[seed]
 	type = seed_to_produce[seed]
 	planted = true
 

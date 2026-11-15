@@ -8,7 +8,9 @@ enum Produce {
 	SAUCE,
 	ASH,
 	ONION_SEED,
-	TOMATO_SEED
+	TOMATO_SEED,
+	PASTA,
+	TOMATO_PASTA
 }
 
 
@@ -20,7 +22,8 @@ const SAUCE = preload("res://images/tomato_sauce.png")
 const TOMATO_CHOPPED = preload("res://images/cut_tomato.png")
 const ONION_SEED = preload("res://images/onion_seed.png")
 const TOMATO_SEED = preload("res://images/tomato_seed.png")
-
+const PASTA = preload("res://images/pasta.png")
+const TOMATO_PASTA = preload("res://images/pasta_pompedoro.png")
 
 static var produceImages = {
 	Produce.ASH : ASH,
@@ -30,7 +33,9 @@ static var produceImages = {
 	Produce.SAUCE: SAUCE,
 	Produce.CHOPPED_TOMATO: TOMATO_CHOPPED,
 	Produce.ONION_SEED: ONION_SEED,
-	Produce.TOMATO_SEED: TOMATO_SEED
+	Produce.TOMATO_SEED: TOMATO_SEED,
+	Produce.PASTA: PASTA,
+	Produce.TOMATO_PASTA: TOMATO_PASTA,
 }
 
 static var IP_ADDRESS := "127.0.0.1"
