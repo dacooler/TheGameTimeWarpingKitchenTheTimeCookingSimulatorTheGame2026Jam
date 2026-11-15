@@ -8,7 +8,7 @@ var cookedPercent = 0
 @onready var basket: Node2D = $Basket
 
 var rawToCooked = {
-	{Globals.Produce.TOMATO: 1, Globals.Produce.ONION: 1}: {Globals.Produce.SAUCE : 1},
+	{Globals.Produce.CHOPPED_TOMATO: 1, Globals.Produce.CHOPPED_ONION: 1}: {Globals.Produce.SAUCE : 1},
 }
 
 # Called when the node enters the scene tree for the first time.

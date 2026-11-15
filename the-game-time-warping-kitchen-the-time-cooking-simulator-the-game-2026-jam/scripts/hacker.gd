@@ -78,8 +78,13 @@ func _good_cut():
 	_new_thing()
 	done_player.play()
 	var chopped = chopping.pop_back()
-	if chopped != null:
-		chopped.set_type(cut_result[chopped.type])
+	if (chopped == null):
+		return
+	if (!cut_result.has(chopped.type)):
+		chopped.set_type(Globals.Produce.ASH)
+		return
+	chopped.set_type(cut_result[chopped.type])
+	
 
 func _send_cut():
 	if (selected_action == typed):
