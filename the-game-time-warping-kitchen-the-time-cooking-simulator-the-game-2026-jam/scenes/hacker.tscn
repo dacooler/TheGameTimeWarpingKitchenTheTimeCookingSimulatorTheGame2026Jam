@@ -45,7 +45,7 @@ collision_mask = 2
 script = ExtResource("2_5ownp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CuttingBoardExitArea" unique_id=1137769281]
-position = Vector2(591, 598)
+position = Vector2(591, 520.54)
 shape = SubResource("RectangleShape2D_ii7jg")
 
 [node name="CuttingBoardEnterArea" type="Area2D" parent="." unique_id=79635887]
@@ -54,7 +54,7 @@ collision_mask = 2
 script = ExtResource("2_nryjd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CuttingBoardEnterArea" unique_id=838612427]
-position = Vector2(591, 598)
+position = Vector2(591, 520.17)
 shape = SubResource("RectangleShape2D_ii7jg")
 
 [node name="CutPlayer" type="AudioStreamPlayer2D" parent="." unique_id=779732461]
@@ -74,20 +74,20 @@ offset_right = 765.0
 offset_bottom = 336.00003
 
 [node name="Basket" parent="." unique_id=1565680274 instance=ExtResource("9_pvidj")]
-position = Vector2(183, 382)
+position = Vector2(183, 337.26)
 
 [node name="CuttingBoard" type="StaticBody2D" parent="." unique_id=593789637]
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="CuttingBoard" unique_id=170348588]
 z_index = -1
-position = Vector2(576, 481.00006)
+position = Vector2(578, 410)
 rotation = 3.1415925
 scale = Vector2(1144.8972, 647.97424)
 mesh = SubResource("QuadMesh_j2lhl")
 texture = ExtResource("12_5ownp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CuttingBoard" unique_id=2106542180]
-position = Vector2(572.00006, 774.00006)
+position = Vector2(580, 710.00006)
 rotation = 3.1415925
 scale = Vector2(1144.8972, 647.97424)
 shape = SubResource("RectangleShape2D_m1b0l")
