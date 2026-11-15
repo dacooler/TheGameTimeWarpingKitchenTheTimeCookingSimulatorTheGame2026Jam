@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://m58dwpncaya" path="res://images/pot.png" id="1_t1rim"]
 [ext_resource type="Script" uid="uid://c6noytmg7n8bm" path="res://scenes/prefabs/plantbox.gd" id="3_hiuae"]
 [ext_resource type="Texture2D" uid="uid://wkf5owt4n3ej" path="res://images/tomato_seedling.png" id="4_hiuae"]
+[ext_resource type="AudioStream" uid="uid://due16orp1k50v" path="res://audio/sfx/Planting.wav" id="5_022oj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m1b0l"]
 size = Vector2(113, 102)
@@ -53,6 +54,7 @@ position = Vector2(585, 587)
 shape = SubResource("RectangleShape2D_ii7jg")
 
 [node name="Sprout" type="MeshInstance2D" parent="." unique_id=611743090]
+visible = false
 position = Vector2(593, 509)
 scale = Vector2(370.18753, -312.96045)
 mesh = SubResource("QuadMesh_m1b0l")
@@ -100,3 +102,6 @@ color = Color(1, 0.6784314, 0.9411765, 0.68235296)
 hue_variation_min = -0.05
 hue_variation_max = 0.1
 hue_variation_curve = SubResource("Curve_6vm1l")
+
+[node name="PlantingSound" type="AudioStreamPlayer2D" parent="." unique_id=1588641283]
+stream = ExtResource("5_022oj")

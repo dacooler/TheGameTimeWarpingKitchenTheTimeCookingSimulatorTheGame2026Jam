@@ -30,6 +30,9 @@ func _get_recipie() -> Dictionary[Globals.Produce, int]:
 	recipie.sort()
 	return recipie
 
+@onready var cook_sound: AudioStreamPlayer2D = $cookSound
+@onready var success_sound: AudioStreamPlayer2D = $successSound
+@onready var fail_sound: AudioStreamPlayer2D = $failSound
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var recipie = _get_recipie()
@@ -37,18 +40,23 @@ func _process(delta: float) -> void:
 	if (recipie.is_empty()):
 		smoke_particle.emitting = false
 		dust_particle.emitting = false
+		cook_sound.playing = false
 		return
 
 	smoke_particle.emitting = true
 	dust_particle.emitting = true
+	if !cook_sound.playing:
+		cook_sound.play()
 	cookedPercent += delta * cookingSpeed
 	if (cookedPercent < 100):
 		return
 	cookedPercent = 0
 	if (rawToCooked.has(recipie)):
 		recipie = (rawToCooked[recipie])
+		success_sound.play()
 	else:
 		recipie = {Globals.Produce.ASH : 1}
+		fail_sound.play()
 
 	for produce_type in produces:
 		for produce in produces[produce_type]:

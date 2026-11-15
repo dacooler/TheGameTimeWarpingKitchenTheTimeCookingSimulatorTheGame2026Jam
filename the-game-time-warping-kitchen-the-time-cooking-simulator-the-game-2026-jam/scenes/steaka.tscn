@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://b1jx6npmo2p1" path="res://images/pan.png" id="4_lbb8j"]
 [ext_resource type="Script" uid="uid://qs65sjyb3w1" path="res://scripts/frypan_enter_area.gd" id="4_vf612"]
 [ext_resource type="Script" uid="uid://cfq6aj7fqxbx5" path="res://scripts/frypan_leave_area.gd" id="5_lbb8j"]
+[ext_resource type="AudioStream" uid="uid://mdg3hcbhnjuh" path="res://audio/sfx/Frying.wav" id="7_aodnl"]
+[ext_resource type="AudioStream" uid="uid://ctvepdynuih7b" path="res://audio/sfx/nice_whistle.wav" id="8_0x66p"]
+[ext_resource type="AudioStream" uid="uid://csmwxg2mc310x" path="res://audio/sfx/error.wav" id="9_n7wp7"]
 
 [sub_resource type="Gradient" id="Gradient_6vm1l"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
@@ -95,3 +98,12 @@ color = Color(0.3766248, 0.41840243, 0.46098286, 0.39607844)
 color_ramp = SubResource("Gradient_6vm1l")
 hue_variation_min = 0.39
 hue_variation_max = 1.0
+
+[node name="cookSound" type="AudioStreamPlayer2D" parent="." unique_id=2123007163]
+stream = ExtResource("7_aodnl")
+
+[node name="successSound" type="AudioStreamPlayer2D" parent="." unique_id=2141899724]
+stream = ExtResource("8_0x66p")
+
+[node name="failSound" type="AudioStreamPlayer2D" parent="." unique_id=1025179134]
+stream = ExtResource("9_n7wp7")

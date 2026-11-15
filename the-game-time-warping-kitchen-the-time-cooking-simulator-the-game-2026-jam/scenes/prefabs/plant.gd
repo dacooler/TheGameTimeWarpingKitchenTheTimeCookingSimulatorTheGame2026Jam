@@ -24,6 +24,7 @@ var planted = false
 func _ready() -> void:
 	pass # Replace with function body.
 
+@onready var planting_sound: AudioStreamPlayer2D = $PlantingSound
 @onready var cpu_particles_2d: CPUParticles2D = $CPUParticles2D
 func plant(seed: Globals.Produce):
 	sprout.visible = true
@@ -31,6 +32,7 @@ func plant(seed: Globals.Produce):
 	type = seed_to_produce[seed]
 	planted = true
 	cpu_particles_2d.emitting = true
+	planting_sound.play()
 
 func unplant():
 	sprout.visible = false
