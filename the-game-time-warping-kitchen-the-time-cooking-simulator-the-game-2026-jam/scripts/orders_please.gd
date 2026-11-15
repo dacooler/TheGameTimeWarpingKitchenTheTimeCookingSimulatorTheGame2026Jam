@@ -1,8 +1,8 @@
 extends Node2D
 
 @onready var timer: Timer = $Timer
-var seconds: int = 30
-var minutes: int = 1
+var seconds: int = 00
+var minutes: int = 5
 @onready var rich_text_label: RichTextLabel = $RichTextLabel
 @onready var calm_music_player: AudioStreamPlayer2D = $CalmMusicPlayer
 @onready var stress_music_player: AudioStreamPlayer2D = $StressMusicPlayer
