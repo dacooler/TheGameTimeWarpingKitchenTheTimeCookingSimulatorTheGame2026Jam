@@ -13,6 +13,7 @@ func _ready():
 	timer.set_one_shot(false)
 	add_child(timer) 
 	timer.start() 
+	minutes = Globals.time
 
 
 func _on_timer_timeout():

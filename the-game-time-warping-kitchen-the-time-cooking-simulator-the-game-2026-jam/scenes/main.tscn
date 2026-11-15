@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://p3wjpb2nli2m" path="res://scripts/button.gd" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://br53nb22gt1eh" path="res://scripts/ip_input.gd" id="2_0wfyh"]
+[ext_resource type="Script" uid="uid://h0hfb5htwgec" path="res://scenes/ip_input_2.gd" id="3_jyhfs"]
 [ext_resource type="AudioStream" uid="uid://cot31kpbfw721" path="res://audio/ost/Warped_Shoehorn.mp3" id="3_sugp2"]
 
 [node name="Node2D" type="Node2D" unique_id=1670611415]
@@ -25,10 +26,10 @@ script = ExtResource("1_o5qli")
 scene = "res://scenes/hacker.tscn"
 
 [node name="OrdersPleaseButton" type="Button" parent="." unique_id=668079960]
-offset_left = 651.0
-offset_top = 426.0
-offset_right = 1103.0
-offset_bottom = 556.0
+offset_left = 635.0
+offset_top = 379.0
+offset_right = 1087.0
+offset_bottom = 509.0
 text = "ORDERS PLEASE"
 script = ExtResource("1_o5qli")
 scene = "res://scenes/orders_please.tscn"
@@ -54,10 +55,10 @@ script = ExtResource("1_o5qli")
 scene = "res://scenes/pantry.tscn"
 
 [node name="SteakaButton" type="Button" parent="." unique_id=923163865]
-offset_left = 78.0
-offset_top = 421.0
-offset_right = 530.0
-offset_bottom = 551.0
+offset_left = 70.0
+offset_top = 376.0
+offset_right = 522.0
+offset_bottom = 506.0
 text = "STEAKA"
 script = ExtResource("1_o5qli")
 scene = "res://scenes/steaka.tscn"
@@ -69,6 +70,28 @@ offset_right = 610.0
 offset_bottom = 189.0
 script = ExtResource("2_0wfyh")
 
+[node name="IPInput2" type="TextEdit" parent="." unique_id=653143685]
+offset_left = 473.0
+offset_top = 598.0
+offset_right = 663.0
+offset_bottom = 646.0
+text = "5"
+script = ExtResource("3_jyhfs")
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1732529827]
 stream = ExtResource("3_sugp2")
 autoplay = true
+
+[node name="Label" type="Label" parent="." unique_id=526726430]
+offset_left = 476.0
+offset_top = 571.0
+offset_right = 626.0
+offset_bottom = 594.0
+text = "Time (minutes)"
+
+[node name="Label2" type="Label" parent="." unique_id=809775413]
+offset_left = 366.0
+offset_top = 63.0
+offset_right = 646.0
+offset_bottom = 86.0
+text = "Ip Address of server (for connecting)"
