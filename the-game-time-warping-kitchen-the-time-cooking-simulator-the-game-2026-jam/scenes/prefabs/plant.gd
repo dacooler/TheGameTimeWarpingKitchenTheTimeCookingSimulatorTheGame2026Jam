@@ -24,11 +24,13 @@ var planted = false
 func _ready() -> void:
 	pass # Replace with function body.
 
+@onready var cpu_particles_2d: CPUParticles2D = $CPUParticles2D
 func plant(seed: Globals.Produce):
 	sprout.visible = true
 	sprout.texture = seed_images[seed]
 	type = seed_to_produce[seed]
 	planted = true
+	cpu_particles_2d.emitting = true
 
 func unplant():
 	sprout.visible = false
@@ -38,6 +40,7 @@ func unplant():
 func _process(delta: float) -> void:
 	pass
 
+@onready var grow_party: CPUParticles2D = $growParty
 func grow():
 	if (planted):
 		var instance = ONION.instantiate()
@@ -47,4 +50,5 @@ func grow():
 		instance.position.y += 200
 		instance.is_in_basket = false
 		add_sibling(instance)
+		grow_party.emitting = true
 		unplant()
