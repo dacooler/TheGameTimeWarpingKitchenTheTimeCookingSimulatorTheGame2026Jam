@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://p3wjpb2nli2m" path="res://scripts/button.gd" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://br53nb22gt1eh" path="res://scripts/ip_input.gd" id="2_0wfyh"]
+[ext_resource type="AudioStream" uid="uid://cot31kpbfw721" path="res://audio/ost/Warped_Shoehorn.mp3" id="3_sugp2"]
 
 [node name="Node2D" type="Node2D" unique_id=1670611415]
 
@@ -67,3 +68,7 @@ offset_top = 99.0
 offset_right = 610.0
 offset_bottom = 189.0
 script = ExtResource("2_0wfyh")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1732529827]
+stream = ExtResource("3_sugp2")
+autoplay = true

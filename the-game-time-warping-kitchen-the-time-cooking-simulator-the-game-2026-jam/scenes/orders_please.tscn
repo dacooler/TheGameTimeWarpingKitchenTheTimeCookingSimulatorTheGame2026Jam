@@ -4,9 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://d2xt1jemxgi7d" path="res://images/orders_please.jpg" id="2_lk0oa"]
 [ext_resource type="PackedScene" uid="uid://dgugmtsxvgb82" path="res://scenes/prefabs/basket.tscn" id="4_4edkc"]
 [ext_resource type="Script" uid="uid://pmupw4c23yl4" path="res://scripts/plate.gd" id="4_kjnmp"]
+[ext_resource type="AudioStream" uid="uid://rvo4y4u2jtxo" path="res://audio/sfx/talking1.wav" id="5_pvhfg"]
 [ext_resource type="Texture2D" uid="uid://ckjdmwruigm0c" path="res://images/plate.png" id="5_topsq"]
+[ext_resource type="AudioStream" uid="uid://qnj8uw2cwwgh" path="res://audio/sfx/talking2.wav" id="6_pm7mg"]
 [ext_resource type="Script" uid="uid://ccpxyh4h0jlrd" path="res://scripts/coins.gd" id="6_topsq"]
-[ext_resource type="AudioStream" uid="uid://c585x3xbk104d" path="res://audio/ost/Ristorante_Al_Dente.mp3" id="7_nk7cm"]
+[ext_resource type="AudioStream" uid="uid://b6n66ira8fpn6" path="res://audio/sfx/talking3.wav" id="7_knx7f"]
+[ext_resource type="AudioStream" uid="uid://crqmn3l6bapry" path="res://audio/ost/Ristorante_Al_Dente.mp3" id="7_nk7cm"]
+[ext_resource type="AudioStream" uid="uid://455lsu520qwc" path="res://audio/ost/Layers_of_Onion.wav" id="8_fytp3"]
+[ext_resource type="AudioStream" uid="uid://csmwxg2mc310x" path="res://audio/sfx/error.wav" id="8_knx7f"]
+[ext_resource type="Texture2D" uid="uid://0wijcbspm6wu" path="res://images/man.jpg" id="12_pm7mg"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_6vm1l"]
 
@@ -14,6 +20,12 @@
 size = Vector2(158, 124)
 
 [sub_resource type="QuadMesh" id="QuadMesh_ec42o"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ii7jg"]
+streams_count = 3
+stream_0/stream = ExtResource("5_pvhfg")
+stream_1/stream = ExtResource("6_pm7mg")
+stream_2/stream = ExtResource("7_knx7f")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6vm1l"]
 size = Vector2(1174, 140)
@@ -26,10 +38,13 @@ size = Vector2(168, 898)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4edkc"]
 size = Vector2(262, 818)
 
+[sub_resource type="QuadMesh" id="QuadMesh_ii7jg"]
+
 [node name="Node2D" type="Node2D" unique_id=1434163687]
 script = ExtResource("1_gppf8")
 
 [node name="Background" type="MeshInstance2D" parent="." unique_id=1728481455]
+z_index = -2
 position = Vector2(575.68744, 374.06247)
 scale = Vector2(1204.6249, -799.875)
 mesh = SubResource("QuadMesh_6vm1l")
@@ -51,6 +66,18 @@ rotation = -3.1415927
 scale = Vector2(297.6454, 297.64526)
 mesh = SubResource("QuadMesh_ec42o")
 texture = ExtResource("5_topsq")
+
+[node name="Talking" type="AudioStreamPlayer2D" parent="Plate" unique_id=1180388828]
+position = Vector2(2.822754, -16.177338)
+rotation = 3.1415925
+scale = Vector2(297.6454, 297.64526)
+stream = SubResource("AudioStreamRandomizer_ii7jg")
+
+[node name="Error" type="AudioStreamPlayer2D" parent="Plate" unique_id=1039132329]
+position = Vector2(2.822754, -16.177338)
+rotation = 3.1415925
+scale = Vector2(297.6454, 297.64526)
+stream = ExtResource("8_knx7f")
 
 [node name="Floor2" type="StaticBody2D" parent="." unique_id=2069182563]
 position = Vector2(-8, 172)
@@ -116,6 +143,26 @@ offset_bottom = 23.0
 theme_override_font_sizes/font_size = 64
 text = "Coins: 100"
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1414141667]
+[node name="CalmMusicPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1414141667]
 stream = ExtResource("7_nk7cm")
 autoplay = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1119693945]
+offset_left = 688.0
+offset_top = 21.0
+offset_right = 1069.0
+offset_bottom = 115.0
+theme_override_font_sizes/normal_font_size = 50
+
+[node name="Timer" type="Timer" parent="." unique_id=132685320]
+
+[node name="StressMusicPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1628933619]
+position = Vector2(688, 21)
+stream = ExtResource("8_fytp3")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=2143206158]
+z_index = -1
+position = Vector2(883, 282)
+scale = Vector2(232.75002, -610)
+mesh = SubResource("QuadMesh_ii7jg")
+texture = ExtResource("12_pm7mg")

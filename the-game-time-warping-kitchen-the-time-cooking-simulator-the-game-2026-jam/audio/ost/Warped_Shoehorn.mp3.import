@@ -2,7 +2,7 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-uid="uid://ejafjindbd7d"
+uid="uid://cot31kpbfw721"
 path="res://.godot/imported/Warped_Shoehorn.mp3-7d3db5e1fb5a226d4aff095cadc14ea2.mp3str"
 
 [deps]
@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Warped_Shoehorn.mp3-7d3db5e1fb5a226d4aff095ca
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

@@ -2,7 +2,7 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-uid="uid://c585x3xbk104d"
+uid="uid://crqmn3l6bapry"
 path="res://.godot/imported/Ristorante_Al_Dente.mp3-725c20d8dd7d0d927dbbbdb1a73bb270.mp3str"
 
 [deps]
@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Ristorante_Al_Dente.mp3-725c20d8dd7d0d927dbbb
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
